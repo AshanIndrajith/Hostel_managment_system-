@@ -1,10 +1,10 @@
-package com.example.hostalManagmentSystem;
+package com.example.HMS;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HostalManagmentSystemApplicationTests {
+class HmsApplicationTests {
 
 	@Test
 	void contextLoads() {
