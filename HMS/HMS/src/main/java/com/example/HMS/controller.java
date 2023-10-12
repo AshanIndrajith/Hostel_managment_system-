@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class controller {
 
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String index() {
         return "Greetings from Spring Boot!";
     }
