@@ -2,20 +2,21 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="HMS_BACKEND" />
+        <module name="HMS" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="HMS_BACKEND" target="17" />
+      <module name="HMS" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="HMS_BACKEND" options="-parameters" />
+      <module name="HMS" options="-parameters" />
     </option>
   </component>
 </project>
