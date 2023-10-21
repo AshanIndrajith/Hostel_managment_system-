@@ -14,8 +14,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 @RequestMapping("api/auth")
+
 @RequiredArgsConstructor
 public class AuthControll {
 
@@ -28,6 +30,8 @@ public class AuthControll {
     public ResponseEntity<AccessResponse> register(@RequestBody RegisterRequests request){
         return ResponseEntity.ok(authService.register(request));
     }
+
+
 
     @PostMapping("/authenticate")
 
