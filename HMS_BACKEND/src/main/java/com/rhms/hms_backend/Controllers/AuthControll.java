@@ -35,6 +35,8 @@ public class AuthControll {
         return ResponseEntity.ok(authService.authenticate(request));
     }
 
+
+
     @GetMapping("/CurrentUser")
     public nvBarDetails getCurrentUser(){  //Getting the CurrentUser username Using Authentication Interface that comes with Spring Security
         Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
