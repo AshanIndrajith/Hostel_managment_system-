@@ -2,6 +2,7 @@ package com.rhms.hms_backend.Services;
 
 import com.rhms.hms_backend.Models.Users;
 import com.rhms.hms_backend.Repositories.UserRepo;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -54,6 +55,15 @@ public class UserService {
     public Integer getUserCount(){
         return Math.toIntExact(userRepo.count());
     }
+
+
+
+    public List<Object[]> findStudentsData() {
+        return userRepo.findStudentsData();
+    }
+
+
+
 
 
 //    public User updateProfile(Integer id, User profile) {
