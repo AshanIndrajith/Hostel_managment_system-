@@ -30,7 +30,7 @@ function getAllStudent() {
                     '<td>' + firstName + '</td>' +
                     '<td>' + lastName + '</td>' +
                     '<td>' + email + '</td>' +
-                    '<td><button type="button" class="update btn btn-success" onclick="getStudentrDetails(' + id + ')" >Update</button> <button type="button" onclick="deleteUser(' + id + ') " class="delete btn btn-danger">Delete</button></td>' +
+                    '<td><button type="button" class="update btn btn-success" onclick="getStudentrDetails(' + id + ')" >Update</button> <button type="button" onclick="deleteStudent(' + id + ') " class="delete btn btn-danger">Delete</button></td>' +
                    
                     '</tr>';
 
@@ -247,3 +247,48 @@ function deleteUser(empID){
    }
  });
 }
+
+
+
+
+
+
+function deleteStudent(empID){
+  
+  swal({
+   title: "Are you sure?",
+   text: "Permanently delete selected data ?",
+   icon: "warning",
+   buttons: true,
+   dangerMode: true,
+ })
+ .then((willDelete) => {
+ 
+   if (willDelete) {
+     $.ajax({
+       method: "DELETE",
+       url:"http://localhost:8080/api/user/delete/"+empID,
+       async:true,
+   
+       success:function(data){
+          
+          
+          window.location.href = "view_student.html";
+       },
+       error:function(xhr,exception){
+           alert("Error")
+       }
+    })
+     swal(" customer  details  are deleted!", {
+       icon: "success",
+     });
+   } else {
+     swal("Your details  is safe!");
+   }
+ });
+}
+
+
+
+
+
