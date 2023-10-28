@@ -253,54 +253,66 @@
           
 
 
-           <!-- insert data -->
-           <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
+           <!-- view data -->
+           <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
-              <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
-                <h2 style="text-align: center;font-family: 'Times New Roman', Times, serif;">Student Registration</h2><br>
+              <div class="card-body">
+                <h3  style="text-align: center;font-family: 'Times New Roman', Times, serif;">Registed Student</h3><br><br>
                 
-                <form class="forms-sample">
-                  <div class="form-group row">
-                    <label for="index" class="col-sm-3 col-form-label">Index Number:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="index" placeholder="TG/2019/xxx">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="fname" class="col-sm-3 col-form-label">First Name:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="fname" placeholder="First Name">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="lname" class="col-sm-3 col-form-label">Last Name:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="lname" placeholder="Last Name">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="email" class="col-sm-3 col-form-label">Email:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="email" placeholder="user@gmail.com">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="password" class="col-sm-3 col-form-label">Password:</label>
-                    <div class="col-sm-9">
-                      <input type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                  </div>
-                
-                  <div style="display: flex; justify-content: flex-end;">
-                    <button type="button" class="btn btn-primary mr-2" onclick="saveStudent()">Submit</button>
-                    <button type="reset" class="btn btn-warning">Cancel</button>
-                  </div>
-                </form>
-                
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>
+                          User
+                        </th>
+                        <th>
+                          First name
+                        </th>
+                        <th>
+                          Progress
+                        </th>
+                        <th>
+                          Amount
+                        </th>
+                        <th>
+                          Deadline
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="py-1">
+                          <img src="../../images/faces/face1.jpg" alt="image"/>
+                        </td>
+                        <td>
+                          Herman Beck
+                        </td>
+                        <td>
+                          <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </td>
+                        <td>
+                          $ 77.99
+                        </td>
+                        <td>
+                          May 15, 2015
+                        </td>
+                      </tr>
+                     
+                    
+                    
+                     
+                    
+                     
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-          <!-- end of student data -->
+          <!-- end of view data -->
 
 
           
