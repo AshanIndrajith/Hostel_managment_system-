@@ -43,6 +43,7 @@ public class AuthService {
                     .fname(request.getFname())
                     .lname(request.getLname())
                     .user_index(request.getUser_index())
+                    .email(request.getEmail())
                     .password(passwordEncoder.encode(request.getPassword()))
                     .role(Role.STUDENT)
                     .build();
