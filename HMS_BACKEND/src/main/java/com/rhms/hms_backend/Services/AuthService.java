@@ -55,6 +55,22 @@ public class AuthService {
                     .Token(jwtToken)
                     .build();
         }
+
+        else if ("WARDEN".equals(request.getRole())) {
+            var users = Users.builder()
+                    .fname(request.getFname())
+                    .lname(request.getLname())
+                    .user_index(request.getUser_index())
+                    .email(request.getEmail())
+                    .password(passwordEncoder.encode(request.getPassword()))
+                    .role(Role.WARDEN)
+                    .build();
+            userRepo.save(users);
+            var jwtToken = jwtService.generateToken(users);
+            return AccessResponse.builder()
+                    .Token(jwtToken)
+                    .build();
+        }
             return null;
         }
 
