@@ -38,6 +38,10 @@ public class Users implements UserDetails {
     @Column(nullable = false)
     private String lname;
 
+
+    @Column(nullable = false)
+    private String email;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 
