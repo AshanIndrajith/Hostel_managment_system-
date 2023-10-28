@@ -89,6 +89,53 @@ function saveStudent() {
 
 
 
+function saveWarden() {
+
+    alert('hello')
+  
+    var index = $('#index').val();
+    var fname = $('#fname').val();
+    var lname = $('#lname').val();
+    var email = $('#email').val();
+    var password = $('#password').val();
+    var role = 'WARDEN'; // Modify as needed
+    alert(index)
+
+    // Send AJAX request
+    $.ajax({
+        method: "POST",
+        contentType: "application/json",
+        url: "http://localhost:8080/api/auth/register",
+        async: true,
+        data: JSON.stringify({
+            "enabled": true,
+            "fname": fname,
+            "lname": lname,
+            "password": password,
+            "email": email,
+            "role": role,
+            "user_index": index
+        }),
+        success: function (data) {
+           
+             alert("saved");
+          
+        },
+        error: function (xhr, status, error) {
+            if (error.hasOwnProperty('message')) {
+                alert("Error Message: " + error.message);
+            } else {
+                alert("Unknown Error Occurred");
+            }
+        }
+    });
+}
+
+
+
+
+
+
 
 
 

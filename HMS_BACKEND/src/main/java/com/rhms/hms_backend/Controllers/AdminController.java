@@ -26,16 +26,16 @@ private UserService userService;
         return userService.getAllUsers();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Users> getUserById(@PathVariable Long id){
-        Users user = userService.getUserById(id);
-        if(user == null){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        else {
-            return  new ResponseEntity<>(user,HttpStatus.OK);
-        }
-    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Users> getUserById(@PathVariable Long id){
+//        Users user = userService.getUserById(id);
+//        if(user == null){
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//        else {
+//            return  new ResponseEntity<>(user,HttpStatus.OK);
+//        }
+//    }
 
 
     @DeleteMapping("/{id}")

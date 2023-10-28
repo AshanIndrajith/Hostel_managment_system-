@@ -17,9 +17,12 @@ public interface UserRepo extends JpaRepository<Users,Long> {
     @Query(nativeQuery = true, value = "SELECT * FROM student_view")
     List<Users> findAllStudents();
 
+    @Query(nativeQuery = true, value = "SELECT * FROM warden_view")
+    List<Object[]>  findAllWarden();
 
 
-    @Query(nativeQuery = true, value = "SELECT id, user_index, fname, lname, email FROM users WHERE role = 'STUDENT'")
+
+    @Query(nativeQuery = true, value = "SELECT * FROM student_view")
     List<Object[]> findStudentsData();
 
 

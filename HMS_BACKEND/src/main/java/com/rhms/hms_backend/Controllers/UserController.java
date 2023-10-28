@@ -52,12 +52,52 @@ public class UserController {
     @GetMapping("/get/{id}")
     @ResponseBody
     public ResponseEntity<Users> getStudentById(@PathVariable Long id) {
-        Users student = Users.getCustomerById(id);
-        if (customer == null) {
+        Users users = userService.getStudentById(id);
+        if (users == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(customer);
+        return ResponseEntity.ok(users);
     }
+
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateStudent(@PathVariable("id") Long id, @RequestBody Users updateStudent) {
+        Users existingStudent = userService.getStudentById(id);
+        if (existingStudent != null) {
+
+            existingStudent.setFname(updateStudent.getFname());
+            existingStudent.setLname(updateStudent.getLname());
+            existingStudent.setEmail(updateStudent.getEmail());
+            existingStudent.setUser_index(updateStudent.getUser_index());
+
+
+            Users updatedStudentObj = userService.updateStudent(existingStudent);
+            return ResponseEntity.ok(updatedStudentObj);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
+
+    @GetMapping("/Wardens")
+    public List<Object[]> getWardenData() {
+        return userService.findWardenData();
+    }
+
+
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+        try {
+            userService.deleteUserById(id);
+            return ResponseEntity.ok("User is  deleted successfully");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error occurred while deleting User: " + e.getMessage());
+        }
+    }
+
 
 
 }
