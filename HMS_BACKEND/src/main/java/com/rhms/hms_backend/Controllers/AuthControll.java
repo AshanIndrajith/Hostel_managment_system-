@@ -14,6 +14,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/auth")
 @RequiredArgsConstructor
@@ -49,6 +51,13 @@ public class AuthControll {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String user_index = authentication.getName();
         return authService.getUserByIndex(user_index);
+    }
+
+
+
+    @GetMapping("/allUsers")
+    public List<Users> getAllUsers(){
+        return authService.getAllUsers();
     }
 
 //    @PutMapping("/UpdateProfile")
