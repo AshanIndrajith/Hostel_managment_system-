@@ -4,11 +4,6 @@ getAllWarden()
 
 
 
-
-
-
-
-
 function getAllWarden() {
   $.ajax({
       method: "GET",
@@ -55,6 +50,7 @@ function getAllWarden() {
 
 
 function getStudentrDetails(id) {
+
 
 
   $.ajax({
