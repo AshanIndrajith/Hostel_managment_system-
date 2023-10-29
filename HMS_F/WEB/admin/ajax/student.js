@@ -1,12 +1,12 @@
-
 getAllWarden() 
+
 
 
 
 function getAllWarden() {
   $.ajax({
       method: "GET",
-      url: "http://localhost:8080/api/user/Wardens", // Update with your actual URL
+      url: "http://localhost:8080/api/user/students", // Update with your actual URL
       success: function (data, status) {
           console.log("Status:", status);
           console.log("Data:", data);
@@ -45,12 +45,13 @@ function getAllWarden() {
   });
 }
 
+    
 
 
 
 function getStudentrDetails(id) {
 
-  
+
     $.ajax({
       method: "GET",
       url: "http://localhost:8080/api/user/get/" + id,
@@ -64,7 +65,6 @@ function getStudentrDetails(id) {
           var lname = data.lname; // Update property name based on your data
 
           console.log(index)
-  
           // Construct the URL for the new page with query parameters
           var url = "update_student.html" +
             "?id=" + encodeURIComponent(id) +
@@ -83,6 +83,16 @@ function getStudentrDetails(id) {
       }
     });
   }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -115,7 +125,7 @@ function getStudentrDetails(id) {
         }),
         success: function (data) {
            
-             alert("saved");
+          window.location.href = "View_student.html";
           
         },
         error: function (xhr, status, error) {
@@ -127,123 +137,3 @@ function getStudentrDetails(id) {
         }
     });
 }
-  
-
-
-
-function getWardenDetails(id) {
-
-  
-  $.ajax({
-    method: "GET",
-    url: "http://localhost:8080/api/user/get/" + id,
-    async: true,
-    success: function(data) {
-      if (data != null) {
-        var id = data.id;
-        var index = data.user_index; // Update property name based on your data
-        var fname = data.fname; // Update property name based on your data
-        var email = data.email;
-        var lname = data.lname; // Update property name based on your data
-
-        console.log(index)
-
-        // Construct the URL for the new page with query parameters
-        var url = "update_warden.html" +
-          "?id=" + encodeURIComponent(id) +
-          "&fname=" + encodeURIComponent(fname) +
-          "&lname=" + encodeURIComponent(lname) +
-          "&email=" + encodeURIComponent(email) +
-          "&index=" + encodeURIComponent(index) ;
-          
-
-        // Redirect the user to the new page
-        window.location.href = url;
-      }
-    },
-    error: function(xhr, status, error) {
-      console.log("Error:", error);
-    }
-  });
-}
-
-
-function deleteUser(empID){
-  
-  swal({
-   title: "Are you sure?",
-   text: "Permanently delete selected data ?",
-   icon: "warning",
-   buttons: true,
-   dangerMode: true,
- })
- .then((willDelete) => {
- 
-   if (willDelete) {
-     $.ajax({
-       method: "DELETE",
-       url:"http://localhost:8080/api/user/delete/"+empID,
-       async:true,
-   
-       success:function(data){
-          
-          
-          window.location.href = "view_warden.html";
-       },
-       error:function(xhr,exception){
-           alert("Error")
-       }
-    })
-     swal(" customer  details  are deleted!", {
-       icon: "success",
-     });
-   } else {
-     swal("Your details  is safe!");
-   }
- });
-}
-
-
-
-
-
-
-function deleteStudent(empID){
-  
-  swal({
-   title: "Are you sure?",
-   text: "Permanently delete selected data ?",
-   icon: "warning",
-   buttons: true,
-   dangerMode: true,
- })
- .then((willDelete) => {
- 
-   if (willDelete) {
-     $.ajax({
-       method: "DELETE",
-       url:"http://localhost:8080/api/user/delete/"+empID,
-       async:true,
-   
-       success:function(data){
-          
-          
-          window.location.href = "view_student.html";
-       },
-       error:function(xhr,exception){
-           alert("Error")
-       }
-    })
-     swal(" customer  details  are deleted!", {
-       icon: "success",
-     });
-   } else {
-     swal("Your details  is safe!");
-   }
- });
-}
-
-
-
-
-
