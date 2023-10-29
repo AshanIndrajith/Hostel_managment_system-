@@ -19,7 +19,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/LOGO_OF_RUHUNA.jpg" />
+  <link rel="shortcut icon" href="images/favicon.png" />
 </head>
 <body>
   <div class="container-scroller">
@@ -27,6 +27,7 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/LOGO_OF_RUHUNA.jpg" class="mr-3" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -122,10 +123,6 @@
       <div id="right-sidebar" class="settings-panel">
        
         <div class="tab-content" id="setting-content">
-         
-
-
-
           <!-- To do section tab ends -->
           
           <!-- chat tab ends -->
@@ -142,58 +139,60 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+            <i class="icon-grid-2 menu-icon"></i> 
               <span class="menu-title">Manage Student</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="Register_student.html">Register</a></li>
-                <li class="nav-item"> <a class="nav-link" href="View_student.html">View</a></li>
-               
-              </ul>
-            </div>
-
-            
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-              <i class="icon-columns menu-icon"></i>
-              <span class="menu-title">Manage wardans</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="form-elements">
+            <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="Register_student.html">Register</a></li>
                 <li class="nav-item"><a class="nav-link" href="View_student.html">View</a></li>
               </ul>
             </div>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Manage Room</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="Room_Allocate.html">Room Registration</a></li>
               </ul>
             </div>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="icon-grid-2 menu-icon"></i>
-              <span class="menu-title">Tables</span>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Manage Complaint</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="tables">
+            <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
+                <li class="nav-item"> <a class="nav-link" href="View_Complaint.html">View Complaint</a></li>
+                <li class="nav-item"> <a class="nav-link" href="update_complaint.html">Update Complaint</a></li>
+             
               </ul>
             </div>
-          </li> -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <i class="icon-columns menu-icon"></i>
+              <span class="menu-title">Report Generate</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="Daily_report.html"> Daily  Report</a></li>
+                <li class="nav-item"><a class="nav-link" href="Monthly_report.html"> Monthly  Report</a></li>
+              </ul>
+            </div>
+          </li>
+          
+         
           <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
               <i class="icon-contract menu-icon"></i>
@@ -243,99 +242,93 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-12 grid-margin">
-              <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Welcome Admin</h3>
-               </div>
-                <div class="col-12 col-xl-4">
-                 <div class="justify-content-end d-flex">
-                  
-                 </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card tale-bg">
-                <div class="card-people mt-auto">
-                  <img src="images/23081.jpg" alt="people" style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                  <div class="weather-info">
-                    <div class="d-flex">
-                      <div>
+            <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
+                <div class="card">
+                  <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
+                    <h4 style="text-align: center;">Room Registration</h4><br><br>
+                    
+                    <form class="forms-sample">
+                      <div class="form-group row">
+                        <label for="index" class="col-sm-3 col-form-label">Room Number:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>America</option>
+                                <option>Italy</option>
+                                <option>Russia</option>
+                                <option>Britain</option>
+                              </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="fname" class="col-sm-3 col-form-label">From Date</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="fname" placeholder="yy/mm/dd">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="lname" class="col-sm-3 col-form-label">To Date</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="lname" placeholder="yy/mm/dd">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="lname" class="col-sm-3 col-form-label">Student ID</label>
+                        <div class="col-sm-2">
+                          <input type="text" class="form-control" id="lname" placeholder="Stu 1"></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" id="lname" placeholder="Stu 2"></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" id="lname" placeholder="Stu 3"></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" id="lname" placeholder="Stu 4"></div>
+                        </div>
                        
                       </div>
-                     
-                    </div>
+                      <!-- 
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-3 col-form-label">Email:</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="email" placeholder="user@gmail.com">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="password" class="col-sm-3 col-form-label">Password:</label>
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                      </div> -->
+                      <!-- <div class="col-md-9 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="card-title" style="align-items: center;">Typeahead</h4>
+                            <p class="card-description">
+                              A simple suggestion engine
+                            </p>
+                            <div class="form-group row">
+                              <div class="col">
+                                <label>Basic</label>
+                                <div id="the-basics">
+                                  <input class="typeahead" type="text" placeholder="States of USA">
+                                </div>
+                              </div>
+                              <div class="col">
+                                <label>Bloodhound</label>
+                                <div id="bloodhound">
+                                  <input class="typeahead" type="text" placeholder="States of USA">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div> -->
+                    
+                      <div style="display: flex; justify-content: flex-end;">
+                        <button type="button" class="btn btn-primary mr-2" onclick="saveStudent()">Submit</button>
+                        <button type="reset" class="btn btn-warning">Cancel</button>
+                      </div>
+                    </form>
+                    
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 grid-margin transparent">
-              <div class="row">
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-tale">
-                    <div class="card-body" style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Damage</p>
-                      <p class="fs-30 mb-2">40</p>
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-dark-blue">
-                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Total complain</p>
-                      <p class="fs-30 mb-2">12</p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                  <div class="card card-light-blue">
-                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Student</p>
-                      <p class="fs-30 mb-2">420</p>
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 stretch-card transparent">
-                  <div class="card card-light-danger">
-                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Hostel</p>
-                      <p class="fs-30 mb-2">01</p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
           
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-     
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -364,7 +357,6 @@
   <!-- Custom js for this page-->
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
-  <script src="../../js/chart.js"></script>
   <!-- End custom js for this page-->
 </body>
 
