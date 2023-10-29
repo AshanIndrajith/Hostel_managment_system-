@@ -123,10 +123,6 @@
       <div id="right-sidebar" class="settings-panel">
        
         <div class="tab-content" id="setting-content">
-         
-
-
-
           <!-- To do section tab ends -->
           
           <!-- chat tab ends -->
@@ -243,83 +239,97 @@
           </li> -->
         </ul>
       </nav>
+    
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-12 grid-margin">
-              <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Welcome Wardan</h3>
-               </div>
-                <div class="col-12 col-xl-4">
-                 <div class="justify-content-end d-flex">
-                  
-                 </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card tale-bg">
-                <div class="card-people mt-auto">
-                  <img src="images/Institute-Hostel-Management-System-1.jpg" alt="people" style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                  <div class="weather-info">
-                    <div class="d-flex">
-                      <div>
+            <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
+                <div class="card">
+                  <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
+                    <h4 style="text-align: center;">Room Registration</h4><br><br>
+                    
+                    <form class="forms-sample">
+                      <div class="form-group row">
+                        <label for="index" class="col-sm-3 col-form-label">Room Number:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>America</option>
+                                <option>Italy</option>
+                                <option>Russia</option>
+                                <option>Britain</option>
+                              </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="fname" class="col-sm-3 col-form-label">From Date</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="fname" placeholder="yy/mm/dd">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="lname" class="col-sm-3 col-form-label">To Date</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="lname" placeholder="yy/mm/dd">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="lname" class="col-sm-3 col-form-label">Student ID</label>
+                        <div class="col-sm-2">
+                          <input type="text" class="form-control" id="lname" placeholder="Stu 1"></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" id="lname" placeholder="Stu 2"></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" id="lname" placeholder="Stu 3"></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" id="lname" placeholder="Stu 4"></div>
+                        </div>
                        
                       </div>
-                     
-                    </div>
+                      <!-- 
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-3 col-form-label">Email:</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="email" placeholder="user@gmail.com">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="password" class="col-sm-3 col-form-label">Password:</label>
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                      </div> -->
+                      <!-- <div class="col-md-9 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="card-title" style="align-items: center;">Typeahead</h4>
+                            <p class="card-description">
+                              A simple suggestion engine
+                            </p>
+                            <div class="form-group row">
+                              <div class="col">
+                                <label>Basic</label>
+                                <div id="the-basics">
+                                  <input class="typeahead" type="text" placeholder="States of USA">
+                                </div>
+                              </div>
+                              <div class="col">
+                                <label>Bloodhound</label>
+                                <div id="bloodhound">
+                                  <input class="typeahead" type="text" placeholder="States of USA">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div> -->
+                    
+                      <div style="display: flex; justify-content: flex-end;">
+                        <button type="button" class="btn btn-primary mr-2" onclick="saveStudent()">Submit</button>
+                        <button type="reset" class="btn btn-warning">Cancel</button>
+                      </div>
+                    </form>
+                    
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 grid-margin transparent">
-              <div class="row">
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-tale">
-                    <div class="card-body" style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Damage</p>
-                      <p class="fs-30 mb-2">40</p>
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-dark-blue">
-                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Total complain</p>
-                      <p class="fs-30 mb-2">12</p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                  <div class="card card-light-blue">
-                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Student</p>
-                      <p class="fs-30 mb-2">420</p>
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 stretch-card transparent">
-                  <div class="card card-light-danger">
-                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Hostel</p>
-                      <p class="fs-30 mb-2">01</p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-     
+          
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
