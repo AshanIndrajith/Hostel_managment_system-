@@ -56,10 +56,7 @@ public class AuthControll {
 
 
 
-    @GetMapping("/allUsers")
-    public List<Users> getAllUsers(){
-        return authService.getAllUsers();
-    }
+
 
 //    @PutMapping("/UpdateProfile")
 //    public ResponseEntity<Users> updateUserProfile (@RequestBody Users updatedUser){
