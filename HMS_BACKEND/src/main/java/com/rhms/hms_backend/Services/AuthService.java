@@ -113,9 +113,7 @@ public class AuthService {
         }
 
 
-    public List<Users> getAllUsers() {
-        return userRepo.findAllStudents();
-    }
+
 
 //    public Users updateUser(User users) {
 //        return updateRepo.save(users);

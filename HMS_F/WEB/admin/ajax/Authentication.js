@@ -26,7 +26,7 @@ function saveEmployee() {
         data: JSON.stringify(data),
         success: function (data) {
             alert("Saved");
-            resetForm();
+            window.location.href = "View_student.html";
         },
         error: function (xhr, status, error) {
             if (error.hasOwnProperty('message')) {
@@ -91,7 +91,7 @@ function saveStudent() {
 
 function saveWarden() {
 
-    alert('hello')
+    
   
     var index = $('#index').val();
     var fname = $('#fname').val();
@@ -99,7 +99,7 @@ function saveWarden() {
     var email = $('#email').val();
     var password = $('#password').val();
     var role = 'WARDEN'; // Modify as needed
-    alert(index)
+   
 
     // Send AJAX request
     $.ajax({

@@ -14,8 +14,7 @@ public interface UserRepo extends JpaRepository<Users,Long> {
     Optional<Users> findByIndex(String user_index);
 
 
-    @Query(nativeQuery = true, value = "SELECT * FROM student_view")
-    List<Users> findAllStudents();
+
 
     @Query(nativeQuery = true, value = "SELECT * FROM warden_view")
     List<Object[]>  findAllWarden();

@@ -124,8 +124,9 @@ function getStudentrDetails(id) {
             "user_index": index
         }),
         success: function (data) {
-           
+
           window.location.href = "View_student.html";
+
           
         },
         error: function (xhr, status, error) {
