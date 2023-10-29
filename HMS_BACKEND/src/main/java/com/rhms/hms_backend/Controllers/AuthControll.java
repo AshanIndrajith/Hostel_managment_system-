@@ -14,7 +14,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
+@CrossOrigin
 @RequestMapping("api/auth")
 @RequiredArgsConstructor
 public class AuthControll {
@@ -50,6 +53,10 @@ public class AuthControll {
         String user_index = authentication.getName();
         return authService.getUserByIndex(user_index);
     }
+
+
+
+
 
 //    @PutMapping("/UpdateProfile")
 //    public ResponseEntity<Users> updateUserProfile (@RequestBody Users updatedUser){

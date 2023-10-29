@@ -33,13 +33,14 @@ public class SecurityConfig  {
                 .csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/api/auth/**").permitAll()
+                    .requestMatchers("/api/complaints/**").permitAll()
 
                 .requestMatchers("/api/user/admin").hasRole(Role.ADMIN.name())
                 .requestMatchers("/api/user/student").hasRole(Role.STUDENT.name())
                 .requestMatchers("/api/user/warden").hasRole(Role.WARDEN.name())
                 .requestMatchers("/api/user/dean").hasRole(Role.DEAN.name())
                 .requestMatchers("/api/user/subwarden").hasRole(Role.SUBWARDEN.name())
-
+                    .requestMatchers("api/user/**").permitAll()
                 .requestMatchers("api/admin/**").permitAll()
 
                 .anyRequest().authenticated()

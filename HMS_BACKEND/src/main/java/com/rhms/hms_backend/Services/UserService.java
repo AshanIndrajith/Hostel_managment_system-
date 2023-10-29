@@ -2,6 +2,7 @@ package com.rhms.hms_backend.Services;
 
 import com.rhms.hms_backend.Models.Users;
 import com.rhms.hms_backend.Repositories.UserRepo;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -10,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -25,9 +27,7 @@ public class UserService {
         return userRepo.findAll();
     }
 
-    public Users getUserById(Long id) {
-        return userRepo.findById(id).orElse(null);
-    }
+
 
 
 //Delete user
@@ -54,6 +54,43 @@ public class UserService {
     public Integer getUserCount(){
         return Math.toIntExact(userRepo.count());
     }
+
+
+
+    public List<Object[]> findStudentsData() {
+        return userRepo.findStudentsData();
+    }
+
+    public List<Object[]> findWardenData(){
+        return userRepo.findAllWarden();
+    }
+
+
+    public User getUserById(Long id) {
+        return (User) userRepo.findById(id).orElse(null);
+    }
+
+
+
+    public Users getStudentById(Long id) {
+        Optional<Users> customerOptional = userRepo.findById(id);
+        return customerOptional.orElse(null);
+    }
+
+
+    public Users updateStudent(Users users) {
+        return userRepo.save(users);
+    }
+
+
+    public void deleteUserById(Long id) {
+
+        userRepo.deleteById(id);
+
+    }
+
+
+
 
 
 //    public User updateProfile(Integer id, User profile) {

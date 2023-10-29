@@ -13,6 +13,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -29,6 +31,7 @@ public class AuthService {
                     .fname(request.getFname())
                     .lname(request.getLname())
                     .user_index(request.getUser_index())
+                    .email(request.getEmail())
                     .password(passwordEncoder.encode(request.getPassword()))
                     .role(Role.ADMIN)
                     .build();
@@ -42,8 +45,25 @@ public class AuthService {
                     .fname(request.getFname())
                     .lname(request.getLname())
                     .user_index(request.getUser_index())
+                    .email(request.getEmail())
                     .password(passwordEncoder.encode(request.getPassword()))
                     .role(Role.STUDENT)
+                    .build();
+            userRepo.save(users);
+            var jwtToken = jwtService.generateToken(users);
+            return AccessResponse.builder()
+                    .Token(jwtToken)
+                    .build();
+        }
+
+        else if ("WARDEN".equals(request.getRole())) {
+            var users = Users.builder()
+                    .fname(request.getFname())
+                    .lname(request.getLname())
+                    .user_index(request.getUser_index())
+                    .email(request.getEmail())
+                    .password(passwordEncoder.encode(request.getPassword()))
+                    .role(Role.WARDEN)
                     .build();
             userRepo.save(users);
             var jwtToken = jwtService.generateToken(users);
@@ -91,6 +111,9 @@ public class AuthService {
         public Users getUserById (Long id){
             return userRepo.findById(id).orElse(null);
         }
+
+
+
 
 //    public Users updateUser(User users) {
 //        return updateRepo.save(users);

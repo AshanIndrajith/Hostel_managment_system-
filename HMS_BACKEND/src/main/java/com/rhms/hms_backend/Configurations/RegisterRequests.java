@@ -14,6 +14,8 @@ public class RegisterRequests {
     private Long id;
     private String fname;
     private String lname;
+
+    private String email;
     private String user_index;
     private String password;
     private String role;
