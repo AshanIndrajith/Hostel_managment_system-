@@ -222,8 +222,12 @@ function redirectToPanel(userRole) {
         case 'ADMIN':
             window.location.href = '../admin/index.html';
             break;
-        case 'PURCHASE_COORDINATOR':
-            window.location.href = '/purchase-coordinator-panel';
+        case 'STUDENT':
+            window.location.href = '../student/index.html';
+            break;
+
+        case 'WARDEN':
+            window.location.href = '../admin/subwarden.html';
             break;
         // Add more cases for other roles as needed
         default:
