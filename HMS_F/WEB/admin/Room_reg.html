@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
+
+  <script src="ajax/room.js"></script>
+  <script src="ajax/jquery-3.6.1.min.js"></script>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Hostal Managment System</title>
+  <title>Student Register</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -19,7 +22,15 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/LOGO_OF_RUHUNA.jpg" />
+  <link rel="shortcut icon" href="images/favicon.png" />
+
+
+
+
+
+
+
+
 </head>
 <body>
   <div class="container-scroller">
@@ -149,31 +160,28 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="Register_student.html">Register</a></li>
-                <li class="nav-item"> <a class="nav-link" href="View_student.html">View</a></li>
-               
+                <li class="nav-item"> <a class="nav-link" href="">Insert</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">View</a> </li>
+             
               </ul>
             </div>
-
-            
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" >
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="icon-columns menu-icon"></i>
-              <span class="menu-title">Manage wardans</span>
+              <span class="menu-title">Form elements</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="Register_wardan.html">Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="View_warden.html">View</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
               </ul>
             </div>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Room</span>
+              <span class="menu-title">Charts</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
@@ -181,7 +189,7 @@
                 <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
               </ul>
             </div>
-          </li>
+          </li> -->
           <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="icon-grid-2 menu-icon"></i>
@@ -243,82 +251,45 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-12 grid-margin">
-              <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Welcome Admin</h3>
-               </div>
-                <div class="col-12 col-xl-4">
-                 <div class="justify-content-end d-flex">
-                  
-                 </div>
-                </div>
+          
+
+
+           <!-- insert data -->
+           <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
+            <div class="card">
+              <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
+                <h4 style="text-align: center;">Added Rooms</h4><br><br>
+                
+                <form class="forms-sample">
+                  <div class="form-group row">
+                    <label for="index" class="col-sm-3 col-form-label">Room Number:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="room_num" placeholder="xxx">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="fname" class="col-sm-3 col-form-label">Others:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="others" placeholder="4" readonly>
+                    </div>
+                  </div>
+                 
+                 
+                
+                  <div style="display: flex; justify-content: flex-end;">
+                    <button type="button" class="btn btn-primary mr-2" onclick="saveRoom()">Submit</button>
+                    <button type="reset" class="btn btn-warning">Cancel</button>
+                  </div>
+                </form>
+                
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card tale-bg">
-                <div class="card-people mt-auto">
-                  <img src="images/23081.jpg" alt="people" style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                  <div class="weather-info">
-                    <div class="d-flex">
-                      <div>
-                       
-                      </div>
-                     
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 grid-margin transparent">
-              <div class="row">
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-tale">
-                    <div class="card-body" style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Damage</p>
-                      <p class="fs-30 mb-2">40</p>
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-dark-blue">
-                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Total complain</p>
-                      <p class="fs-30 mb-2">12</p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                  <div class="card card-light-blue">
-                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Student</p>
-                      <p class="fs-30 mb-2">420</p>
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 stretch-card transparent">
-                  <div class="card card-light-danger">
-                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Hostel</p>
-                      <p class="fs-30 mb-2">01</p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- end of student data -->
 
 
           
+            
           
 
 
@@ -364,7 +335,6 @@
   <!-- Custom js for this page-->
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
-  <script src="../../js/chart.js"></script>
   <!-- End custom js for this page-->
 </body>
 
