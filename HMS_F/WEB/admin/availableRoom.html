@@ -3,8 +3,13 @@
 
 <head>
 
-  <script src="ajax/room.js"></script>
   <script src="ajax/jquery-3.6.1.min.js"></script>
+<script src="ajax/room.js"></script>
+
+
+
+
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -160,9 +165,9 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Insert</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">View</a> </li>
-             
+                <li class="nav-item"> <a class="nav-link" href="Register_student.html">Insert</a></li>
+                <li class="nav-item"> <a class="nav-link" href="View_student.html">View</a></li>
+               
               </ul>
             </div>
           </li>
@@ -254,45 +259,35 @@
           
 
 
-           <!-- insert data -->
-           <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
+           <!-- view data -->
+           <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
-              <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
-                <h4 style="text-align: center;">Added Rooms</h4><br><br>
+              <div class="card-body">
+                <h4  style="text-align: center;">Available Room</h4><br><br>
                 
-                <form class="forms-sample">
-                  <div class="form-group row">
-                    <label for="index" class="col-sm-3 col-form-label">Room Number:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="room_num" placeholder="xxx">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="fname" class="col-sm-3 col-form-label">Room Capacity:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="cap" placeholder="4" readonly>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="fname" class="col-sm-3 col-form-label">Others:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="others" placeholder="other" >
-                    </div>
-                  </div>
-                 
-                 
-                
-                  <div style="display: flex; justify-content: flex-end;">
-                    <button type="button" class="btn btn-primary mr-2" onclick="saveRoom()">Submit</button>
-                    <button type="reset" class="btn btn-warning">Cancel</button>
-                  </div>
-                </form>
-                
+                <div class="table-responsive">
+                  <table class="table table-striped" id="AvailbleRoom">
+                      <thead>
+                          <tr>
+                              <th>Room number</th>
+                              <th>Available capacity</th>
+                              
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                  </table>
+              </div>
+              
               </div>
             </div>
           </div>
-          <!-- end of student data -->
+          <!-- end of view data -->
 
+
+          
+                   
 
           
             

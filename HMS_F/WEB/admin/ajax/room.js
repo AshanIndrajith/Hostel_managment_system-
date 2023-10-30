@@ -1,4 +1,4 @@
-
+getAVailbleRoom()
 
 function saveRoom() {
     var roomNumber = $('#room_num').val();
@@ -40,3 +40,52 @@ function resetForm() {
     $('#room_num').val(''); // Clear room number
     $('#others').val(''); // Clear others field
 }
+
+
+
+
+
+function getAVailbleRoom() {
+    $.ajax({
+        method: "GET",
+        url: "http://localhost:8080/api/room/AvailableRoom", // Update with your actual URL
+        success: function (data, status) {
+            console.log("Status:", status);
+            console.log("Data:", data);
+  
+            // Get the table body to populate data
+            var tableBody = $('#AvailbleRoom tbody');
+            tableBody.empty(); // Clear existing table rows
+  
+            // Loop through the data and create table rows
+            for (var i = 0; i < data.length; i++) {
+                var room = data[i];
+                var room_number = room[0];
+                var  available_capacity = room[1];
+                
+  
+                var newRow = '<tr>' +
+                    '<td>' + room_number + '</td>' +
+                    '<td>' + available_capacity + '</td>' +
+                    '<td><button type="button" class="update btn btn-success" onclick="" >Assign</button> ' +
+                   
+                    '</tr>';
+  
+                tableBody.append(newRow);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error("Request failed with status: " + status);
+            console.error("Error details: " + error);
+            console.error("hello");
+        }
+    });
+
+
+  }
+
+
+
+
+  
+  

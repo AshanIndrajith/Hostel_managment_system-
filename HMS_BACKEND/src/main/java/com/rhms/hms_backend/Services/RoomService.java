@@ -49,4 +49,10 @@ public class RoomService {
 
 
 
+    public List<Object[]> findAvailableRooms() {
+        return roomRepo.findAvailableRoom();
+    }
+
+
+
 }
