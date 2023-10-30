@@ -84,6 +84,22 @@ public class RoomController {
     }
 
 
+    @GetMapping("/AvailableRoom")
+    public ResponseEntity<?> getAvailableRoom() {
+        try {
+            List<Object[]> availableRooms = roomService.findAvailableRooms();
+            if (availableRooms != null && !availableRooms.isEmpty()) {
+                return ResponseEntity.ok(availableRooms); // 200 OK
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No available rooms found."); // 404 Not Found
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred."); // 500 Internal Server Error
+        }
+    }
+
+
+
 
 
 
