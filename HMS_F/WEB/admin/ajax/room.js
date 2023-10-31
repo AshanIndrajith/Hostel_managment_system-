@@ -67,7 +67,8 @@ function getAVailbleRoom() {
                 var newRow = '<tr>' +
                     '<td>' + room_number + '</td>' +
                     '<td>' + available_capacity + '</td>' +
-                    '<td><button type="button" class="update btn btn-success" onclick="" >Assign</button> ' +
+                    '<td><button type="button" class="update btn btn-success" onclick="getRoomNumber(\'' + room_number + '\')">Assign</button> ' +
+
                    
                     '</tr>';
   
@@ -85,6 +86,17 @@ function getAVailbleRoom() {
   }
 
 
+  function getRoomNumber(room_number) {
+      alert(room_number);
+    var rnum = String(room_number); // Convert to a string to preserve leading zeros
+
+    // Construct the URL for the new page with query parameters
+    var url = "allocate_room.html" +
+        "?rnum=" + encodeURIComponent(rnum);
+
+    // Redirect the user to the new page
+    window.location.href = url;
+}
 
 
   
