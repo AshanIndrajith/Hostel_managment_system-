@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaint Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css2?family=Roboto&display=swap' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.0.8/html5-qrcode.min.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Complaint Form</h2>
+        <form action="/submit-complaint" method="post">
+            <label for="complainant">Complainant:</label>
+            <input type="text" id="complainant" name="complainant" placeholder="Enter your name" required><br><br>
+
+            <label for="roomNo">Room Number:</label>
+            <input type="number" id="roomNo" name="roomNo" placeholder="Enter room number" required><br><br>
+
+            <label for="property">Property:</label>
+            <input type="text" id="property" name="property" placeholder="Enter property" required><br><br>
+
+            <label for="qr">Scan Qr Code:</label>
+            <div id="qr-reader" style="width:500px;"></div><br><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" placeholder="Enter description" required></textarea><br><br>
+
+            <label for="complainedDate">Complained Date:</label>
+            <input type="date" id="complainedDate" name="complainedDate" required><br><br>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" placeholder="Enter feedback"></textarea><br><br>
+
+            <input type="submit" value="Submit Complaint">
+        </form>
+    </div>
+    <script>
+        function onScanSuccess(decodedText, decodedResult) {
+            console.log(decodedText);
+        }
+
+        function onScanFailure(error) {
+            console.error(error);
+        }
+
+        let html5QrcodeScanner = new Html5QrcodeScanner(
+            "qr-reader", { fps: 10, qrbox: 250 }, /* verbose= */ false);
+        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+    </script>
+</body>
+</html>
