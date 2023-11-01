@@ -1,31 +1,34 @@
 package com.rhms.hms_backend.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import jakarta.persistence.*;
 
 @Entity
-public class RoomAssignment {
+@Table(name="room_assignment")
+public class Room_assignment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "assignment_id")
     private Long assignmentId;
 
+    @Column(name = "user_id")
     private String userId;
 
+    @Column(name = "room_id")
     private String roomId;
+
+    @Column(name = "assignment_date")
     private String assignmentDate;
 
+    public Room_assignment() {
+    }
 
-    public RoomAssignment(Long assignmentId, String userId, String roomId, String assignmentDate) {
+    public Room_assignment(Long assignmentId, String userId, String roomId, String assignmentDate) {
         this.assignmentId = assignmentId;
         this.userId = userId;
         this.roomId = roomId;
         this.assignmentDate = assignmentDate;
-    }
-
-    public RoomAssignment() {
     }
 
 
@@ -60,4 +63,6 @@ public class RoomAssignment {
     public void setAssignmentDate(String assignmentDate) {
         this.assignmentDate = assignmentDate;
     }
+
+
 }
