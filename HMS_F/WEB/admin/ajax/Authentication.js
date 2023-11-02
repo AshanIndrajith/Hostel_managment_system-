@@ -71,7 +71,13 @@ function saveStudent() {
         }),
         success: function (data) {
            
-             alert("saved");
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
           
         },
         error: function (xhr, status, error) {
@@ -117,9 +123,15 @@ function saveWarden() {
             "user_index": index
         }),
         success: function (data) {
-           
-             alert("saved");
-          
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
+             
+        
         },
         error: function (xhr, status, error) {
             if (error.hasOwnProperty('message')) {
