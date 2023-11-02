@@ -101,6 +101,23 @@ public class RoomController {
 
 
 
+    @GetMapping("/AssignRoom")
+    public ResponseEntity<?> getAssignRoom() {
+        try {
+            List<Object[]> assignRoom = roomService.findAssignRooms();
+            if (assignRoom != null && !assignRoom.isEmpty()) {
+                return ResponseEntity.ok(assignRoom); // 200 OK
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No assign rooms found."); // 404 Not Found
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred."); // 500 Internal Server Error
+        }
+    }
+
+
+
+
 
 
 }

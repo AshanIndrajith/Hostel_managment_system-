@@ -53,6 +53,9 @@ public class RoomService {
         return roomRepo.findAvailableRoom();
     }
 
+    public List<Object[]> findAssignRooms() {
 
+        return roomRepo.findAssignRoom();
+    }
 
 }
