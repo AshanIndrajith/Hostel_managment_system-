@@ -73,7 +73,7 @@ public class RoomController {
             existingRoom.setRoomNumber(updateRoom.getRoomNumber());
             existingRoom.setRoomCapacity(updateRoom.getRoomCapacity());
             existingRoom.setStatus(updateRoom.getStatus());
-            existingRoom.setOther(updateRoom.getOther());
+
 
 
             Room updatedObj = roomService.updateRoom(existingRoom);

@@ -25,16 +25,15 @@ public class Room {
     @Column(name = "status")
     private String status;
 
-    @Column(name = "other")
-    private String other;
 
 
-    public Room(Long roomID, String roomNumber, int roomCapacity, String status, String other) {
+
+    public Room(Long roomID, String roomNumber, int roomCapacity, String status) {
         this.roomID = roomID;
         this.roomNumber = roomNumber;
         this.roomCapacity = roomCapacity;
         this.status = status;
-        this.other = other;
+
     }
 
     public Room() {
@@ -73,11 +72,5 @@ public class Room {
         this.status = status;
     }
 
-    public String getOther() {
-        return other;
-    }
 
-    public void setOther(String other) {
-        this.other = other;
-    }
 }
