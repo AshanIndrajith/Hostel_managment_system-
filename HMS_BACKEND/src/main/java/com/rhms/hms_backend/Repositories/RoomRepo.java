@@ -14,4 +14,8 @@ public interface RoomRepo  extends JpaRepository<Room,Long> {
     List<Object[]> findAvailableRoom();
 
 
+    @Query(nativeQuery = true, value = "SELECT * FROM roomassignmentview")
+    List<Object[]> findAssignRoom();
+
+
 }
