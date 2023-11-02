@@ -3,6 +3,7 @@ package com.rhms.hms_backend.Services;
 
 import com.rhms.hms_backend.Models.Room;
 import com.rhms.hms_backend.Repositories.RoomRepo;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,5 +58,9 @@ public class RoomService {
 
         return roomRepo.findAssignRoom();
     }
+
+
+
+
 
 }
