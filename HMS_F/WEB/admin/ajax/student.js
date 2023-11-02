@@ -125,6 +125,15 @@ function getStudentrDetails(id) {
         }),
         success: function (data) {
 
+
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Update scueessfully',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
           window.location.href = "View_student.html";
 
           

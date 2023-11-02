@@ -71,7 +71,13 @@ function saveStudent() {
         }),
         success: function (data) {
            
-             alert("saved");
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
           
         },
         error: function (xhr, status, error) {
@@ -117,9 +123,15 @@ function saveWarden() {
             "user_index": index
         }),
         success: function (data) {
-           
-             alert("saved");
-          
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
+             
+        
         },
         error: function (xhr, status, error) {
             if (error.hasOwnProperty('message')) {
@@ -304,27 +316,31 @@ function decodeJwt(token) {
     console.log('User Role:', userRole);
     redirectToPanel(userRole)
 
-    return userRole;
+    
 }
 function redirectToPanel(userRole) {
+
+    var role;
     // Check if userRole is an array
     if (Array.isArray(userRole)) {
         // If it's an array, select the first role
-        userRole = userRole[0];
+        role = userRole[0];
     }
 
-    switch (userRole) {
-        case 'ADMIN':
-            window.location.href = '../admin/index.html';
-            break;
-        case 'PURCHASE_COORDINATOR':
-            window.location.href = '/purchase-coordinator-panel';
-            break;
-        // Add more cases for other roles as needed
-        default:
-            // Redirect to a default page for unknown roles or handle it as per your requirements
-            console.log(userRole);
+
+    
+
+    if (role === 'ADMIN') {
+        window.location.href = '../admin/index.html';
+    } else if (role === 'STUDENT') {
+        alert("Hello");
+       
+    } else {
+        console.log(role);
+       
     }
+    
+    
 }
 
 

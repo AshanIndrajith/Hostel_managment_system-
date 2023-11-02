@@ -16,6 +16,9 @@ public class Complaint {
     private String complainant;
     @Column(nullable = false)
     private String property;
+
+    @Column(nullable = false)
+    private String defectType;
     @Column(nullable = false)
     private String description;
     @Column(nullable = false)
@@ -27,14 +30,45 @@ public class Complaint {
     @Column(nullable = true)
     private String feedback;
 
+    @Column(nullable = false)
+    private String img;
+
     public Complaint() {
     }
 
-    public Complaint(Long id, int roomNo, String complainant, String property, String description, String status, String adminLevel, LocalDate complainedDate, String feedback) {
+    public Complaint(Long id, int roomNo, String complainant, String property, String defectType, String description, String status, String adminLevel, LocalDate complainedDate, String feedback, String img) {
         this.id = id;
         this.roomNo = roomNo;
         this.complainant = complainant;
         this.property = property;
+        this.defectType = defectType;
+        this.description = description;
+        Status = status;
+        this.adminLevel = adminLevel;
+        this.complainedDate = complainedDate;
+        this.feedback = feedback;
+        this.img = img;
+    }
+
+    public Complaint(int roomNo, String complainant, String property, String defectType, String description, String status, String adminLevel, LocalDate complainedDate, String feedback, String img) {
+        this.roomNo = roomNo;
+        this.complainant = complainant;
+        this.property = property;
+        this.defectType = defectType;
+        this.description = description;
+        Status = status;
+        this.adminLevel = adminLevel;
+        this.complainedDate = complainedDate;
+        this.feedback = feedback;
+        this.img = img;
+    }
+
+    public Complaint(Long id, int roomNo, String complainant, String property, String defectType, String description, String status, String adminLevel, LocalDate complainedDate, String feedback) {
+        this.id = id;
+        this.roomNo = roomNo;
+        this.complainant = complainant;
+        this.property = property;
+        this.defectType = defectType;
         this.description = description;
         Status = status;
         this.adminLevel = adminLevel;
@@ -42,10 +76,11 @@ public class Complaint {
         this.feedback = feedback;
     }
 
-    public Complaint(int roomNo, String complainant, String property, String description, String status, String adminLevel, LocalDate complainedDate, String feedback) {
+    public Complaint(int roomNo, String complainant, String property, String defectType, String description, String status, String adminLevel, LocalDate complainedDate, String feedback) {
         this.roomNo = roomNo;
         this.complainant = complainant;
         this.property = property;
+        this.defectType = defectType;
         this.description = description;
         Status = status;
         this.adminLevel = adminLevel;
@@ -83,6 +118,14 @@ public class Complaint {
 
     public void setProperty(String property) {
         this.property = property;
+    }
+
+    public String getDefectType() {
+        return defectType;
+    }
+
+    public void setDefectType(String defectType) {
+        this.defectType = defectType;
     }
 
     public String getDescription() {
@@ -125,6 +168,14 @@ public class Complaint {
         this.feedback = feedback;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String path) {
+        this.img = path;
+    }
+
     @Override
     public String toString() {
         return "Complaint{" +
@@ -132,11 +183,13 @@ public class Complaint {
                 ", roomNo=" + roomNo +
                 ", complainant='" + complainant + '\'' +
                 ", property='" + property + '\'' +
+                ", defectType='" + defectType + '\'' +
                 ", description='" + description + '\'' +
                 ", Status='" + Status + '\'' +
                 ", adminLevel='" + adminLevel + '\'' +
                 ", complainedDate=" + complainedDate +
                 ", feedback='" + feedback + '\'' +
+                ", path='" + img + '\'' +
                 '}';
     }
 }
