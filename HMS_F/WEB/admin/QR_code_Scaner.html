@@ -5,6 +5,7 @@
 
 
 
+  <script src="ajax/QR.js"></script>
   <script src="ajax/jquery-3.6.1.min.js"></script>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -264,7 +265,7 @@
       <button id="start-camera-button" class="btn btn-primary mr-2">Start Camera</button>
       <video id="qr-video" width="300" height="300" autoplay playsinline></video>
       <p style="margin-top: 20px; margin-bottom: 20px;">QR Code <input type="text" id="qr-data-input" class="form-control"></p>
-      <button type="button" class="btn btn-primary mr-6" onclick="generateQRCode()">Genarate</button>
+      <button type="button" class="btn btn-primary mr-6" onclick="getAllProperty()">Genarate</button>
           
    
   
@@ -325,6 +326,24 @@
               }
           }
       </script>
+
+
+<div class="table-responsive">
+  <table class="table table-striped" id="Qr">
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>property name</th>
+              <th>property id</th>
+              <th>Room number</th>
+             
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+      </tbody>
+  </table>
+</div>
 
    
      
