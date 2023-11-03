@@ -45,7 +45,7 @@ public class SecurityConfig  {
                     .requestMatchers("api/room/**").permitAll()
                     .requestMatchers("api/roomAssign/**").permitAll()
                     .requestMatchers("api/qr/**").permitAll()
-                    .requestMatchers("api/property/**").permitAll()
+                    .requestMatchers("/api/pr/**").permitAll()
 
 
                 .anyRequest().authenticated()

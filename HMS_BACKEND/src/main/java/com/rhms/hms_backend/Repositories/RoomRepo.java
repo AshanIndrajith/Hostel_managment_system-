@@ -20,6 +20,13 @@ public interface RoomRepo  extends JpaRepository<Room,Long> {
     List<Object[]> findAssignRoom();
 
 
+    @Query(nativeQuery = true, value = "SELECT * FROM property WHERE property_uniq_id = 'ch4108'")
+    List<Object[]> findProperty();
+
+
+    @Query(nativeQuery = true, value = "SELECT * FROM property WHERE property_uniq_id = :propertyName")
+    List<Object[]> findPropertyByName(@Param("propertyName") String propertyName);
+
 
 
 

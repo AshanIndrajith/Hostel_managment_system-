@@ -117,6 +117,25 @@ public class RoomController {
 
 
 
+    @GetMapping("/pr")
+    public ResponseEntity<?> getProperty() {
+        try {
+            List<Object[]> property = roomService.findProperty();
+            if (property != null && !property.isEmpty()) {
+                return ResponseEntity.ok(property); // 200 OK
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No assign property found."); // 404 Not Found
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred."); // 500 Internal Server Error
+        }
+    }
+
+
+    @GetMapping("/properties")
+    public List<Object[]> getPropertiesByName(@RequestParam String propertyName) {
+        return roomService.getPropertiesByName(propertyName);
+    }
 
 
 

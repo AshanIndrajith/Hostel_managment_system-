@@ -1,41 +1,45 @@
 package com.rhms.hms_backend.Models;
-
 import jakarta.persistence.*;
 
+
 @Entity
-@Table(name="property")
+@Table(name = "property")
 public class Property {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "property_id")
-    private Long propertyId;
+    private int propertyId;
 
-    @Column(name = "property_name")
+    @Column(name = "property_name", nullable = false)
     private String propertyName;
 
-    @Column(name = "property_uniq_id")
-    private String propertyUniqId;
+    @Column(name = "property_uniq_id", nullable = false)
+    private String propertyUniqueId;
 
-    @Column(name = "room_number")
+    @Column(name = "room_number", nullable = false)
     private String roomNumber;
 
-    public Property(Long propertyId, String propertyName, String propertyUniqId, String roomNumber) {
-        this.propertyId = propertyId;
+    // Constructors, getters, setters, and other methods go here
+
+    // Default constructor
+    public Property() {
+    }
+
+    // Constructor with all fields
+    public Property(String propertyName, String propertyUniqueId, String roomNumber) {
         this.propertyName = propertyName;
-        this.propertyUniqId = propertyUniqId;
+        this.propertyUniqueId = propertyUniqueId;
         this.roomNumber = roomNumber;
     }
 
-    public Property() {
+    // Getters and setters for all fields
 
-    }
-
-    public Long getPropertyId() {
+    public int getPropertyId() {
         return propertyId;
     }
 
-    public void setPropertyId(Long propertyId) {
+    public void setPropertyId(int propertyId) {
         this.propertyId = propertyId;
     }
 
@@ -47,12 +51,12 @@ public class Property {
         this.propertyName = propertyName;
     }
 
-    public String getPropertyUniqId() {
-        return propertyUniqId;
+    public String getPropertyUniqueId() {
+        return propertyUniqueId;
     }
 
-    public void setPropertyUniqId(String propertyUniqId) {
-        this.propertyUniqId = propertyUniqId;
+    public void setPropertyUniqueId(String propertyUniqueId) {
+        this.propertyUniqueId = propertyUniqueId;
     }
 
     public String getRoomNumber() {

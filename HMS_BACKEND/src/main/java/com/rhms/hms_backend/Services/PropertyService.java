@@ -3,7 +3,6 @@ package com.rhms.hms_backend.Services;
 
 import com.rhms.hms_backend.Models.Property;
 import com.rhms.hms_backend.Repositories.PropertyRepo;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,22 +13,14 @@ public class PropertyService {
 
 
 
-
     @Autowired
-    private PropertyRepo propertyRepo;
+    private  PropertyRepo propertyRepo;
 
-
-
-
-    public List<Property> findIdPropertyByPId(String id) {
-
-        return propertyRepo.findByPropertyUniqId(id);
+    public PropertyService(PropertyRepo propertyRepo) {
+        this.propertyRepo = propertyRepo;
     }
 
-
-    public List<Property> findAllProperties() {
+    public List<Property> getAllProperties() {
         return propertyRepo.findAll();
     }
-
-
 }

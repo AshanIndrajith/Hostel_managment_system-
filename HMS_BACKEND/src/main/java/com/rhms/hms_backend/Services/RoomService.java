@@ -60,6 +60,17 @@ public class RoomService {
     }
 
 
+    public List<Object[]> findProperty() {
+
+        return roomRepo.findProperty();
+    }
+
+
+    public List<Object[]> getPropertiesByName(String propertyName) {
+        return roomRepo.findPropertyByName(propertyName);
+    }
+
+
 
 
 
