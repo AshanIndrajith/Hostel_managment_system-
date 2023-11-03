@@ -43,4 +43,6 @@ public class ComplaintController {
     private void DeleteComplaint(@PathVariable("complaintId") Long id){
         complaintService.delete(id);
     }
+
+
 }

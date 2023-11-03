@@ -2,12 +2,9 @@
 <html lang="en">
 
 <head>
-
-
-
-  <script src="ajax/QR.js"></script>
-  <script src="ajax/jquery-3.6.1.min.js"></script>
   <!-- Required meta tags -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Student Register</title>
@@ -28,7 +25,8 @@
 
 
 
-
+  <script src="ajax/complaint.js"></script>
+  <script src="ajax/jquery-3.6.1.min.js"></script>
 
 
 
@@ -162,36 +160,40 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Insert</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">View</a> </li>
-             
+                <li class="nav-item"> <a class="nav-link" href="Register_student.html">Register</a></li>
+                <li class="nav-item"> <a class="nav-link" href="View_student.html">View</a></li>
+               
               </ul>
             </div>
+
+            
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="icon-columns menu-icon"></i>
-              <span class="menu-title">Form elements</span>
+              <span class="menu-title">Manage Wardans</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Register</a></li>
+                <li class="nav-item"><a class="nav-link" href="">View</a></li>
               </ul>
             </div>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Manage Room</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Register Student</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">View Student</a></li>
               </ul>
             </div>
-          </li> -->
+          </li>
           <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="icon-grid-2 menu-icon"></i>
@@ -256,100 +258,68 @@
           
 
 
-<!-- Insert data -->
-<div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
-  <div class="card">
-    <div class="card-body" style="padding-left: 100px; padding-right: 100px; padding-top: 70px; padding-bottom: 100px;">
-      <h4 style="text-align: center;">QR Scanner</h4><br><br>
+           <!-- insert data -->
+           <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
+            <div class="card">
+              <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
+                <h4 style="text-align: center;">Add New Complain </h4><br><br>
+                
+                <form class="forms-sample">
+                  <div class="form-group row">
+                    <label for="index" class="col-sm-3 col-form-label">Property ID:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="pid" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="fname" class="col-sm-3 col-form-label">Property Type:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="type" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="lname" class="col-sm-3 col-form-label">Room Number :</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="rnum" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label">Student ID :</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="sid" placeholder="">
+                    </div>
+                  </div>
 
-      <button id="start-camera-button" class="btn btn-primary mr-2">Start Camera</button>
-      <video id="qr-video" width="300" height="300" autoplay playsinline></video>
-      <p style="margin-top: 20px; margin-bottom: 20px;">QR Code <input type="text" id="qr-data-input" class="form-control"></p>
-      <button type="button" class="btn btn-primary mr-6" onclick="getAllProperty()">Genarate</button>
+                  <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label">Image :</label>
+                    <div class="col-sm-9">
+                      <input type="file" class="form-control" id="image" placeholder="">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="password" class="col-sm-3 col-form-label">Description:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="desc" placeholder="">
+                    </div>
+                  </div>
+                
+                  <div style="display: flex; justify-content: flex-end;">
+                    <button type="button" class="btn btn-primary mr-2" onclick="saveComplain()">Submit</button>
+                    <button type="reset" class="btn btn-warning">Cancel</button>
+                  </div>
+                </form>
+                
+              </div>
+            </div>
+          </div>
+          <!-- end of student data -->
+
+
           
-   
-  
-      <script src="https://cdn.rawgit.com/cozmo/jsQR/master/dist/jsQR.js"></script>
-      <script>
-          const startCameraButton = document.getElementById('start-camera-button');
-          const video = document.getElementById('qr-video');
-          const qrDataInputElement = document.getElementById('qr-data-input');
-          let cameraStream;
-  
-          startCameraButton.addEventListener('click', () => {
-              startCamera();
-          });
-  
-          function startCamera() {
-              startCameraButton.disabled = true; // Disable the button after starting the camera
-  
-              // Request access to the camera
-              navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
-                  .then((stream) => {
-                      cameraStream = stream; // Store the camera stream
-                      video.srcObject = stream;
-                      return video.play();
-                  })
-                  .then(() => {
-                      const canvas = document.createElement('canvas');
-                      const context = canvas.getContext('2d');
-                      canvas.width = video.videoWidth;
-                      canvas.height = video.videoHeight;
-  
-                      const scanQRCode = () => {
-                          context.drawImage(video, 0, 0, canvas.width, canvas.height);
-                          const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-                          const code = jsQR(imageData.data, imageData.width, imageData.height);
-  
-                          if (code) {
-                              const qrCodeData = code.data;
-                              qrDataInputElement.value = qrCodeData;
-                              stopCamera();
-                          }
-  
-                          requestAnimationFrame(scanQRCode);
-                      };
-  
-                      scanQRCode();
-                  })
-                  .catch((error) => {
-                      console.error('Error accessing camera: ', error);
-                      startCameraButton.disabled = false; // Re-enable the button in case of an error
-                  });
-          }
-  
-          function stopCamera() {
-              if (cameraStream) {
-                  const tracks = cameraStream.getTracks();
-                  tracks.forEach((track) => track.stop());
-                  video.style.display = 'none'; // Hide the video element
-              }
-          }
-      </script>
+            
+          
 
-
-<div class="table-responsive">
-  <table class="table table-striped" id="Qr">
-      <thead>
-          <tr>
-              <th>Id</th>
-              <th>property name</th>
-              <th>property id</th>
-              <th>Room number</th>
-             
-              <th>Action</th>
-          </tr>
-      </thead>
-      <tbody>
-      </tbody>
-  </table>
-</div>
-
-   
-     
-    </div>
-  </div>
-</div>
 
 
 

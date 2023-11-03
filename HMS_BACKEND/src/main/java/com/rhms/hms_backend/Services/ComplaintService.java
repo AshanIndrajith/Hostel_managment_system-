@@ -40,5 +40,8 @@ public class ComplaintService {
     }
     public void delete(Long id) {
         complaintRepository.deleteById(id);
+
     }
+
+
 }

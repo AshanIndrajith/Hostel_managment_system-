@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -97,6 +99,22 @@ public class UserController {
                     .body("Error occurred while deleting User: " + e.getMessage());
         }
     }
+
+
+    @GetMapping("/CurrentUser")
+    public String getCurrentUser() {
+        // Getting the current user's user_index (assuming it's the same as the username)
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (authentication != null) {
+            String userIndex = authentication.getName();
+            return userIndex;
+        } else {
+            return "No user authenticated";
+        }
+    }
+
+
 
 
 
