@@ -133,8 +133,25 @@ public class RoomController {
 
 
     @GetMapping("/properties")
-    public List<Object[]> getPropertiesByName(@RequestParam String propertyName) {
-        return roomService.getPropertiesByName(propertyName);
+    public ResponseEntity<List<Object[]>> getPropertiesByName(@RequestParam String propertyName) {
+        List<Object[]> properties = roomService.getPropertiesByName(propertyName);
+        if (properties != null && !properties.isEmpty()) {
+            return ResponseEntity.ok(properties);
+        } else {
+            // You can customize the response for empty results, for example, return 404 Not Found
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/findById")
+    public ResponseEntity<List<Object[]>> getPropertiesById(@RequestParam String id) {
+        List<Object[]> properties = roomService.getPropertiesById(id);
+        if (properties != null && !properties.isEmpty()) {
+            return ResponseEntity.ok(properties);
+        } else {
+            // You can customize the response for empty results, for example, return 404 Not Found
+            return ResponseEntity.notFound().build();
+        }
     }
 
 

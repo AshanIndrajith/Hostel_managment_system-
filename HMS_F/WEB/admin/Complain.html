@@ -23,10 +23,10 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
 
-
-
-  <script src="ajax/complaint.js"></script>
   <script src="ajax/jquery-3.6.1.min.js"></script>
+  <script src="ajax/complaint.js"></script>
+  <script src="ajax/complaint.js"></script>
+
 
 
 
@@ -263,24 +263,51 @@
             <div class="card">
               <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
                 <h4 style="text-align: center;">Add New Complain </h4><br><br>
+
+                <script>
+
+                  $(document).ready(function() {
+
+                  
+                  // Read the query parameters from the URL
+                  var params = new URLSearchParams(window.location.search);
+                  var id = params.get("id");
+                  var propertyName = params.get("propertyName");
+                  var propertyUniqueId = params.get("propertyUniqueId");
+                  var roomNumber = params.get("roomNumber");
+                 
+                  
+
+              
+             
+                  // Set the values of the elements on the page
+                 
+                  $('#type').val(propertyName);
+                  $('#pid').val(propertyUniqueId);
+                  $('#rnum').val(roomNumber);
+                
+                 
+
+              });
+              </script>
                 
                 <form class="forms-sample">
                   <div class="form-group row">
                     <label for="index" class="col-sm-3 col-form-label">Property ID:</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="pid" placeholder="">
+                      <input type="text" class="form-control" id="pid" placeholder="" readonly>
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="fname" class="col-sm-3 col-form-label">Property Type:</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="type" placeholder="">
+                      <input type="text" class="form-control" id="type" placeholder="" readonly>
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="lname" class="col-sm-3 col-form-label">Room Number :</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="rnum" placeholder="">
+                      <input type="text" class="form-control" id="rnum" placeholder="" readonly>
                     </div>
                   </div>
                   <div class="form-group row">

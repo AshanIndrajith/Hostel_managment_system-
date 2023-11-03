@@ -115,6 +115,12 @@ public class UserController {
     }
 
 
+    @GetMapping("/totalRegisteredStudents")
+    public int getTotalRegisteredStudents() {
+        return userService.getTotalRegisteredStudents();
+    }
+
+
 
 
 
