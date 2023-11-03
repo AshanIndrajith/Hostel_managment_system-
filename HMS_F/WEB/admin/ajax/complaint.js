@@ -1,6 +1,6 @@
 function saveComplain() {
 
-    alert("hi")
+    
     let pid = $('#pid').val();
     let ptype = $('#type').val();
     let rnum = $('#rnum').val();
@@ -11,8 +11,6 @@ function saveComplain() {
     let adminLevel="subwarden";
     let date=getCurrentDate();
 
-
-    
 
   
 
