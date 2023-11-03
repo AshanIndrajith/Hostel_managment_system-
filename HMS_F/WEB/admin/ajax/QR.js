@@ -29,7 +29,7 @@ function getProperty() {
                 '<td>' + propertyName + '</td>' +
                 '<td>' + propertyUniqueId + '</td>' +
                 '<td>' + roomNumber + '</td>' +
-                '<td><button type="button" class="update btn btn-success" onclick="getStudentrDetails(' + id + ')" >Update</button> <button type="button" onclick="deleteUser(' + id + ') " class="delete btn btn-danger">Delete</button></td>' +
+                '<td><button type="button" class="update btn btn-success" onclick="getPropertyDetails(' + id + ')" >Complaint</button>' +
                 '</tr>';
             $('#Qr tbody').append(newRow);
         }
@@ -39,6 +39,45 @@ function getProperty() {
       },
       error: function(xhr, status, error) {
         // Handle the error response
+        console.log("Error:", error);
+      }
+    });
+  }
+
+
+
+
+
+  function getPropertyDetails(id) {
+
+
+    $.ajax({
+      method: "GET",
+      url: "http://localhost:8080/api/user/get/" + id,
+      async: true,
+      success: function(data) {
+        if (data != null) {
+          var id = data.id;
+          var index = data.user_index; // Update property name based on your data
+          var fname = data.fname; // Update property name based on your data
+          var email = data.email;
+          var lname = data.lname; // Update property name based on your data
+
+          console.log(index)
+          // Construct the URL for the new page with query parameters
+          var url = "update_student.html" +
+            "?id=" + encodeURIComponent(id) +
+            "&fname=" + encodeURIComponent(fname) +
+            "&lname=" + encodeURIComponent(lname) +
+            "&email=" + encodeURIComponent(email) +
+            "&index=" + encodeURIComponent(index) ;
+            
+  
+          // Redirect the user to the new page
+          window.location.href = url;
+        }
+      },
+      error: function(xhr, status, error) {
         console.log("Error:", error);
       }
     });
