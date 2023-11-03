@@ -71,6 +71,11 @@ public class RoomService {
     }
 
 
+    public List<Object[]> getPropertiesById(String id) {
+        return roomRepo.getPropertiesById(id);
+    }
+
+
 
 
 

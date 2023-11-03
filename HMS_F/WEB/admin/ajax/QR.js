@@ -49,39 +49,39 @@ function getProperty() {
 
 
   function getPropertyDetails(id) {
-
-
+     
     $.ajax({
-      method: "GET",
-      url: "http://localhost:8080/api/user/get/" + id,
-      async: true,
-      success: function(data) {
-        if (data != null) {
-          var id = data.id;
-          var index = data.user_index; // Update property name based on your data
-          var fname = data.fname; // Update property name based on your data
-          var email = data.email;
-          var lname = data.lname; // Update property name based on your data
+        method: "GET",
+        url: "http://localhost:8080/api/room/findById?id=" + id, // Fixed the URL by adding "="
+        async: true,
+        success: function(data) {
+            if (data != null ) { // Check if data is not null and not empty
+                let property = data[0]; // Assuming you want to access the first element
 
-          console.log(index)
-          // Construct the URL for the new page with query parameters
-          var url = "update_student.html" +
-            "?id=" + encodeURIComponent(id) +
-            "&fname=" + encodeURIComponent(fname) +
-            "&lname=" + encodeURIComponent(lname) +
-            "&email=" + encodeURIComponent(email) +
-            "&index=" + encodeURIComponent(index) ;
-            
-  
-          // Redirect the user to the new page
-          window.location.href = url;
+                let id = property[0];
+                let propertyName = property[1];
+                let propertyUniqueId = property[2];
+                let roomNumber = property[3];
+
+                // Construct the URL for the new page with query parameters
+                var url = "Complain.html" +
+                    "?id=" + encodeURIComponent(id) +
+                    "&propertyName=" + encodeURIComponent(propertyName) +
+                    "&propertyUniqueId=" + encodeURIComponent(propertyUniqueId) +
+                    "&roomNumber=" + encodeURIComponent(roomNumber);
+
+                // Redirect the user to the new page
+                window.location.href = url;
+            } else {
+                console.log("Data is empty or null.");
+            }
+        },
+        error: function(xhr, status, error) {
+            console.log("Error:", error);
         }
-      },
-      error: function(xhr, status, error) {
-        console.log("Error:", error);
-      }
     });
-  }
+}
+
 
 
 
