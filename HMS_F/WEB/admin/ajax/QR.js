@@ -1,16 +1,17 @@
 
 
-function getAllVehicle() {
+function getProperty() {
 
+ 
+    var uid = $('#qr-data-input').val();
 
-  var id="ch4108";
-  alert(id)
-  
+ 
+   
   
   
     $.ajax({
       method: "GET",
-      url: "http://localhost:8080/api/room/properties?propertyName=" + id ,
+      url: "http://localhost:8080/api/room/properties?propertyName=" + uid ,
       success: function(data) {
         // Clear existing table rows
         $('#Qr tbody').empty();
@@ -28,7 +29,7 @@ function getAllVehicle() {
                 '<td>' + propertyName + '</td>' +
                 '<td>' + propertyUniqueId + '</td>' +
                 '<td>' + roomNumber + '</td>' +
-                '<td><button type="button" class="your-class" onclick="yourFunction(' + id + ')">Action</button></td>' +
+                '<td><button type="button" class="update btn btn-success" onclick="getStudentrDetails(' + id + ')" >Update</button></td>' +
                 '</tr>';
             $('#Qr tbody').append(newRow);
         }
@@ -45,38 +46,7 @@ function getAllVehicle() {
 
 
 
-  function getAllProperties() {
-    $.ajax({
-        method: "GET",
-        url: "http://localhost:8080/api/room/pr",
-        success: function (data) {
-            // Clear existing table rows
-            $('#Qr tbody').empty();
 
-            // Loop through the array and create table rows dynamically
-            for (let i = 0; i < data.length; i++) {
-                let property = data[i];
-                let id = property[0];
-                let propertyName = property[1];
-                let propertyUniqueId = property[2];
-                let roomNumber = property[3];
-
-                let newRow = '<tr>' +
-                    '<td>' + id + '</td>' +
-                    '<td>' + propertyName + '</td>' +
-                    '<td>' + propertyUniqueId + '</td>' +
-                    '<td>' + roomNumber + '</td>' +
-                    '<td><button type="button" class="your-class" onclick="yourFunction(' + id + ')">Action</button></td>' +
-                    '</tr>';
-                $('#Qr tbody').append(newRow);
-            }
-        },
-        error: function (xhr, status, error) {
-            // Handle the error response
-            console.log("Error:", error);
-        }
-    });
-}
 
 
 
