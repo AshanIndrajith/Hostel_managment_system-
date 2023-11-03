@@ -91,6 +91,12 @@ public class UserService {
 
 
 
+    public int getTotalRegisteredStudents() {
+        return userRepo.getTotalRegisteredStudents();
+    }
+
+
+
 
 
 //    public User updateProfile(Integer id, User profile) {

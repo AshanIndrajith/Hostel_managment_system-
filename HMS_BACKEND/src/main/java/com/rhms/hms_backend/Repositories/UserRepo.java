@@ -25,12 +25,15 @@ public interface UserRepo extends JpaRepository<Users,Long> {
     List<Object[]> findStudentsData();
 
 
+    @Query(value = "SELECT GetTotalRegisteredStudents()", nativeQuery = true)
+    int getTotalRegisteredStudents();
 
 
 
 
 
-    List<Users> findAll();
+
+
 
 
 }

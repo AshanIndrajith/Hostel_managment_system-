@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+
+
+  <script src="ajax/jquery-3.6.1.min.js"></script>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -287,8 +290,23 @@
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-tale">
                     <div class="card-body" style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Damage</p>
-                      <p class="fs-30 mb-2">40</p>
+                      <p class="mb-4">Registed Student</p>
+                      <p class="fs-30 mb-2" id="totalStudents"></p>
+                      <script>
+                        // Make an Ajax request
+                        $.ajax({
+                            url: "http://localhost:8080/api/user/totalRegisteredStudents",
+                            type: "GET",
+                            dataType: "json",
+                            success: function (data) {
+                                // Display the data on the page
+                                $("#totalStudents").text( data);
+                            },
+                            error: function () {
+                                $("#totalStudents").text("Error fetching data");
+                            }
+                        });
+                    </script>
                       
                     </div>
                   </div>
