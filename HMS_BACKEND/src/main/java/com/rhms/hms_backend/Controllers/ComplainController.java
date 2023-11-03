@@ -22,7 +22,6 @@ public class ComplainController {
     @Autowired
     private ComplainService complainService;
 
-
     @GetMapping("/view")
     @ResponseBody
     public ResponseEntity<List<Complain>> listStudents() {
