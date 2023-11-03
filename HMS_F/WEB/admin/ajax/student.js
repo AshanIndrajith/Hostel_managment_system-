@@ -30,7 +30,7 @@ function getAllWarden() {
                   '<td>' + firstName + '</td>' +
                   '<td>' + lastName + '</td>' +
                   '<td>' + email + '</td>' +
-                  '<td><button type="button" class="update btn btn-success" onclick="getStudentrDetails(' + id + ')" >Update</button> <button type="button" onclick="deleteUser(' + id + ') " class="delete btn btn-danger">Delete</button></td>' +
+                  '<td><button type="button" class="update btn btn-success" onclick="getStudentrDetails(' + id + ')" >Update</button> <button type="button" onclick="deleteStudent(' + id + ') " class="delete btn btn-danger">Delete</button></td>' +
                  
                   '</tr>';
 
@@ -146,4 +146,68 @@ function getStudentrDetails(id) {
             }
         }
     });
+}
+
+
+
+
+// function deleteStudent(empID){
+
+//   alert("hi")
+  
+//   swal({
+//    title: "Are you sure?",
+//    text: "Permanently delete selected data ?",
+//    icon: "warning",
+//    buttons: true,
+//    dangerMode: true,
+//  })
+//  .then((willDelete) => {
+
+
+ 
+//    if (willDelete) {
+     
+
+
+
+//      swal(" User  details  are deleted!", {
+//        icon: "success",
+//      });
+//    } else {
+//      swal("Your details  is safe!");
+//    }
+//  });
+
+ 
+  
+ 
+//  }
+
+
+function deleteStudent(empID) {
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      $.ajax({
+        method: "DELETE",
+        url: "http://localhost:8080/api/user/delete/" + empID,
+        async: true,
+        success: function(data) {
+          
+          window.location.href = "View_student.html"; // Removed extra ".html"
+        },
+        error: function(xhr, exception) {
+          alert("Error");
+        }
+      });
+    }
+  });
 }
