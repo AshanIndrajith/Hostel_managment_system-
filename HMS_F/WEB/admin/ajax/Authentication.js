@@ -70,10 +70,12 @@ function saveStudent() {
             "user_index": index
         }),
         success: function (data) {
-           
             Swal.fire({
+
                 width: '400px', // Set the width of the pop-up box
                 heightAuto: false, // Prevent automatic height adjustment
+                position: 'center',
+                icon: 'success',
                 title: 'Your work has been saved',
                 icon: 'success',
                 showConfirmButton: false,
@@ -85,8 +87,9 @@ function saveStudent() {
                 window.location.href = 'View_student.html';
               }, 1000);
               
-          
+
         },
+        
         error: function (xhr, status, error) {
             if (error.hasOwnProperty('message')) {
                 alert("Error Message: " + error.message);
@@ -131,13 +134,17 @@ function saveWarden() {
         }),
         success: function (data) {
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'success',
                 title: 'Your work has been saved',
                 showConfirmButton: false,
-                timer: 1500
-              })
-             
+                timer: 3000
+              });
+              
+              // Delay the redirection for 3 seconds (3000 milliseconds)
+              setTimeout(function() {
+                window.location.href = "View_warden.html";
+              }, 1000);
         
         },
         error: function (xhr, status, error) {
