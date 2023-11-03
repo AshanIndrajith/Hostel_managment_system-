@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -22,6 +23,12 @@ public class ComplainController {
     private ComplainService complainService;
 
 
+    @GetMapping("/view")
+    @ResponseBody
+    public ResponseEntity<List<Complain>> listStudents() {
+        Iterable<Complain> damageList = complainService.getAllComplain();
+        return ResponseEntity.ok((List<Complain>) damageList);
+    }
 
     @PostMapping("/complainSave")
     public ResponseEntity<String> saveComplain(Complain complain, @RequestParam("image") MultipartFile multipartFile) {
@@ -50,6 +57,25 @@ public class ComplainController {
         }
     }
 
+    @GetMapping("/get/{id}")
+    @ResponseBody
+    public ResponseEntity<Complain> getComplaineById(@PathVariable Long id) {
+        Complain complain = complainService.getComplainById(id);
+        if (complain == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(complain);
+    }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteComplain(@PathVariable Long id) {
+        try {
+            complainService.deleteComplainById(id);
+            return ResponseEntity.ok("Complaint deleted successfully");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error occurred while deleting complain: " + e.getMessage());
+        }
+    }
 
 
 
