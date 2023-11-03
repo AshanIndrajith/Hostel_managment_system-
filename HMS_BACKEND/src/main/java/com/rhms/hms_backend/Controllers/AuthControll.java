@@ -8,6 +8,7 @@ import com.rhms.hms_backend.Models.Users;
 import com.rhms.hms_backend.Services.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -48,10 +49,16 @@ public class AuthControll {
     }
 
     @GetMapping("/UserProfile")
-    public Users getCurrentUserProfile() {
+    public ResponseEntity<Users> getCurrentUserProfile() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String user_index = authentication.getName();
-        return authService.getUserByIndex(user_index);
+        Users userProfile = authService.getUserByIndex(user_index);
+
+        if (userProfile != null) {
+            return new ResponseEntity<>(userProfile, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
 
