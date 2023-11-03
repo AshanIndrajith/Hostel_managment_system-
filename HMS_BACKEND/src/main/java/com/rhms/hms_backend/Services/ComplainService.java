@@ -39,4 +39,9 @@ public class ComplainService {
     }
 
 
+    public List<Object[]> findAllComplaint(){
+        return complainRepo.findAllComplaint();
+    }
+
+
 }
