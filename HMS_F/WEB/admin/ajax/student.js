@@ -124,17 +124,22 @@ function getStudentrDetails(id) {
             "user_index": index
         }),
         success: function (data) {
-
-
           Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Update scueessfully',
-            showConfirmButton: false,
-            timer: 1500
-          })
 
-          window.location.href = "View_student.html";
+            width: '400px', // Set the width of the pop-up box
+            heightAuto: false, // Prevent automatic height adjustment
+            position: 'center',
+            icon: 'success',
+            title: 'Your work has been saved',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 3000
+          });
+          
+          // Delay the redirection for 3 seconds (3000 milliseconds)
+          setTimeout(function() {
+            window.location.href = 'View_student.html';
+          }, 1000);
 
           
         },
