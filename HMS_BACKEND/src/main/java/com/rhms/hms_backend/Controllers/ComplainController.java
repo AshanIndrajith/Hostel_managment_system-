@@ -90,6 +90,7 @@ public class ComplainController {
         Complain existingComplain = complainService.getComplainById(id);
         if (existingComplain != null) {
             existingComplain.setStatus(complain.getStatus());
+            existingComplain.setApproved_date(complain.getApproved_date());
 
 
             Complain updatedComplainObj = complainService.updateComplain(existingComplain);
@@ -97,6 +98,15 @@ public class ComplainController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+
+
+    @GetMapping("/Aview")
+    @ResponseBody
+    public ResponseEntity<List<Complain>> listApprovedComplain() {
+        Iterable<Complain> approvedList = complainService.ApprovedComplain();
+        return ResponseEntity.ok((List<Complain>) approvedList);
     }
 
 

@@ -36,8 +36,8 @@ public class Complain {
     private String status;
 
 
-    @Column(name = "admin_level")
-    private String admin_level;
+    @Column(name = "approved_date")
+    private String approved_date;
 
 
     @Column(name = "image_name")
@@ -51,7 +51,7 @@ public class Complain {
     public Complain() {
     }
 
-    public Complain(Long id, String room_number, String description, String complaint_date, String complainant, String property_uniq_id, String property_type, String status, String admin_level, String imageName, MultipartFile imageFile) {
+    public Complain(Long id, String room_number, String description, String complaint_date, String complainant, String property_uniq_id, String property_type, String status, String approved_date, String imageName, MultipartFile imageFile) {
         this.id = id;
         this.room_number = room_number;
         this.description = description;
@@ -60,7 +60,7 @@ public class Complain {
         this.property_uniq_id = property_uniq_id;
         this.property_type = property_type;
         this.status = status;
-        this.admin_level = admin_level;
+        this.approved_date = approved_date;
         this.imageName = imageName;
         this.imageFile = imageFile;
     }
@@ -129,12 +129,12 @@ public class Complain {
         this.status = status;
     }
 
-    public String getAdmin_level() {
-        return admin_level;
+    public String getApproved_date() {
+        return approved_date;
     }
 
-    public void setAdmin_level(String admin_level) {
-        this.admin_level = admin_level;
+    public void setApproved_date(String admin_level) {
+        this.approved_date = admin_level;
     }
 
     public String getImageName() {

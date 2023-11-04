@@ -48,6 +48,11 @@ public class ComplainService {
         return complainRepo.save(complain);
     }
 
+    public Iterable<Complain> ApprovedComplain() {
+        return (List<Complain>) complainRepo.ApprovedComplaint();
+    }
+
+
 
 
 }

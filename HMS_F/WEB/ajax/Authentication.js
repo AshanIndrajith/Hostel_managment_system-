@@ -282,6 +282,10 @@ function getUserProfile() {
             console.log('User profile data:', data);
             console.log('User index:', data.user_index);
             document.getElementById('userIndex').textContent = data.user_index;
+            document.getElementById('userIndex').value = data.user_index;
+
+
+
         },
         error: function(xhr, status, error) {
             // Handle errors here
