@@ -2,14 +2,20 @@
 <html lang="en">
 
 <head>
+
+  <script src="ajax/jquery-3.6.1.min.js"></script>
+<script src="ajax/complaint.js"></script>
+
+
+
+
+
   <!-- Required meta tags -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Student Register</title>
+  <title>Registered Wardan</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/feather/feather.css">
+  <link rel="stylesheet" href="vendors/feather/feather.css"> 
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
@@ -21,11 +27,9 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="images/LOGO_OF_RUHUNA.jpg" />
 
-  <script src="ajax/jquery-3.6.1.min.js"></script>
-  <script src="ajax/complaint.js"></script>
-  <script src="../ajax/Authentication.js"></script>
+
 
 
 
@@ -149,13 +153,13 @@
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.html">
-              <i class="icon-grid menu-icon"></i>
+              <!-- <i class="icon-grid menu-icon"></i>  -->
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
+              <!-- <i class="icon-layout menu-icon"></i> -->
               <span class="menu-title">Manage Student</span>
               <i class="menu-arrow"></i>
             </a>
@@ -163,6 +167,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="Register_student.html">Register</a></li>
                 <li class="nav-item"> <a class="nav-link" href="View_student.html">View</a></li>
+                
                
               </ul>
             </div>
@@ -170,43 +175,47 @@
             
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-              <i class="icon-columns menu-icon"></i>
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" >
+              <!-- <i class="icon-columns menu-icon"></i> -->
               <span class="menu-title">Manage Wardans</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="">Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="">View</a></li>
+                <li class="nav-item"><a class="nav-link" href="Register_wardan.html">Register</a></li>
+                <li class="nav-item"><a class="nav-link" href="View_warden.html">View</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <i class="icon-bar-graph menu-icon"></i>
+              <!-- <i class="icon-bar-graph menu-icon"></i> -->
+
               <span class="menu-title">Manage Room</span>
+
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Register Student</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">View Student</a></li>
+                <li class="nav-item"> <a class="nav-link" href="Room_reg.html">Register Room</a></li>
+                <li class="nav-item"> <a class="nav-link" href="availableRoom.html">Register Member</a></li>
+                <li class="nav-item"> <a class="nav-link" href="View_assign_room.html">Room Assign info</a></li>
               </ul>
             </div>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="icon-grid-2 menu-icon"></i>
-              <span class="menu-title">Tables</span>
+              <!-- <i class="icon-grid-2 menu-icon"></i> -->
+              <span class="menu-title">Manage QR</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
+                <li class="nav-item"> <a class="nav-link" href="QR_code_generate.html">QR Generate</a></li>
+                <li class="nav-item"> <a class="nav-link" href="QR_code_Scaner.html">QR Scan</a></li>
               </ul>
             </div>
-          </li> -->
+          </li>
           <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
               <i class="icon-contract menu-icon"></i>
@@ -259,92 +268,44 @@
           
 
 
-           <!-- insert data -->
-           <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
+           <!-- view data -->
+           <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
-              <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
-                <h4 style="text-align: center;">Add New Complain </h4><br><br>
-
-                <script>
-
-                  $(document).ready(function() {
-
-                  
-                  // Read the query parameters from the URL
-                  var params = new URLSearchParams(window.location.search);
-                  var id = params.get("id");
-                  var propertyName = params.get("propertyName");
-                  var propertyUniqueId = params.get("propertyUniqueId");
-                  var roomNumber = params.get("roomNumber");
-                 
-                  
-
+              <div class="card-body">
+                <h4  style="text-align: center;">All complaint</h4><br><br>
+                
+                <div class="table-responsive">
+                  <table class="table table-striped" id="ApprovedComplaintsTable">
+                    <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Room Number</th>
+                          <th>Property Type</th>
+                          <th>Property Unique ID</th>
+                          <th>complainant</th>
+                          <th>Description</th>
+                          <th>Image Name</th>
+                          <th>Complaint Date</th>
+                          <th>Approved Date</th>
+                          <th>Status</th>
+                         
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+              </div>
               
-             
-                  // Set the values of the elements on the page
-                 
-                  $('#type').val(propertyName);
-                  $('#pid').val(propertyUniqueId);
-                  $('#rnum').val(roomNumber);
-                
-                 
 
-              });
-              </script>
-                
-                <form class="forms-sample">
-                  <div class="form-group row">
-                    <label for="index" class="col-sm-3 col-form-label">Property ID:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="pid" placeholder="" readonly>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="fname" class="col-sm-3 col-form-label">Property Type:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="type" placeholder="" readonly>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="lname" class="col-sm-3 col-form-label">Room Number :</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="rnum" placeholder="" readonly>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="email" class="col-sm-3 col-form-label">Student ID :</label>
-                    <div class="col-sm-9">
-                    
-                      <input type="text" id="userIndex" name="userIndex">
-
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <label for="email" class="col-sm-3 col-form-label">Image :</label>
-                    <div class="col-sm-9">
-                      <input type="file" class="form-control" id="image" placeholder="">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <label for="password" class="col-sm-3 col-form-label">Description:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="desc" placeholder="">
-                    </div>
-                  </div>
-                
-                  <div style="display: flex; justify-content: flex-end;">
-                    <button type="button" class="btn btn-primary mr-2" onclick="saveComplain()">Submit</button>
-                    <button type="reset" class="btn btn-warning">Cancel</button>
-                  </div>
-                </form>
-                
+            
               </div>
             </div>
           </div>
-          <!-- end of student data -->
+          <!-- end of view data -->
 
+
+          
+                   
 
           
             

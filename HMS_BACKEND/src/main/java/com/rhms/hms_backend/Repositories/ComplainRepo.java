@@ -13,4 +13,8 @@ public interface ComplainRepo extends CrudRepository<Complain, Long> {
     List<Object[]> findAllComplaint();
 
 
+    @Query(nativeQuery = true, value = "SELECT * FROM ApprovedComplaints")
+    List<Complain> ApprovedComplaint();
+
+
 }
