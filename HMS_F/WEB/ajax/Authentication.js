@@ -236,11 +236,6 @@ function redirectToPanel(userRole) {
 
 
 
-
-
-
-
-
 // function getUserProfile() {
 //     const token = localStorage.getItem('token');
 //     console.log(token)
