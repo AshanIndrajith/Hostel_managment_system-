@@ -3,32 +3,26 @@
 
 <head>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="ajax/room.js"></script>
   <script src="ajax/jquery-3.6.1.min.js"></script>
-<script src="ajax/student.js"></script>
-
-
-
-
-
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Registered Student</title>
+  <title>Register Room</title>
   <!-- plugins:css -->
-   <link rel="stylesheet" href="vendors/feather/feather.css"> 
+  <link rel="stylesheet" href="vendors/feather/feather.css"> 
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css"> 
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/LOGO_OF_RUHUNA.jpg" />
-
 
 
 
@@ -267,37 +261,40 @@
           
 
 
-           <!-- view data -->
-           <div class="col-lg-12 grid-margin stretch-card">
+           <!-- insert data -->
+           <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
             <div class="card">
-              <div class="card-body">
-                <h4  style="text-align: center;">Registed Student</h4><br><br>
+              <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
+                <h4 style="text-align: center;">Register Rooms</h4><br><br>
                 
-                <div class="table-responsive">
-                  <table class="table table-striped" id="wardenTable">
-                      <thead>
-                          <tr>
-                              <th>Id</th>
-                              <th>Email</th>
-                              <th>First name</th>
-                              <th>Last name</th>
-                              <th>User Index</th>
-                              <th>Action</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-                  </table>
-              </div>
-              
+                <form class="forms-sample">
+                  <div class="form-group row">
+                    <label for="index" class="col-sm-3 col-form-label">Room Number:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="room_num" placeholder="xxx">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="fname" class="col-sm-3 col-form-label">Room Capacity:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="cap" placeholder="4" readonly>
+                    </div>
+                  </div>
+                  
+                 
+                 
+                
+                  <div style="display: flex; justify-content: flex-end;">
+                    <button type="button" class="btn btn-primary mr-2" onclick="saveRoom()">Submit</button>
+                    <button type="reset" class="btn btn-warning">Cancel</button>
+                  </div>
+                </form>
+                
               </div>
             </div>
           </div>
-          <!-- end of view data -->
+          <!-- end of student data -->
 
-
-          
-                   
 
           
             

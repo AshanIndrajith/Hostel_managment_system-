@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script src="ajax/jquery-3.6.1.min.js"></script>
-<script src="ajax/student.js"></script>
+<script src="ajax/complaint.js"></script>
 
 
 
@@ -13,22 +13,21 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Registered Student</title>
+  <title>Registered Wardan</title>
   <!-- plugins:css -->
-   <link rel="stylesheet" href="vendors/feather/feather.css"> 
+  <link rel="stylesheet" href="vendors/feather/feather.css"> 
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css"> 
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/LOGO_OF_RUHUNA.jpg" />
-
 
 
 
@@ -153,7 +152,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="subwarden.html">
+            <a class="nav-link" href="Warden_Dasboard.html">
               <!-- <i class="icon-grid menu-icon"></i>  -->
               <span class="menu-title">Dashboard</span>
             </a>
@@ -166,30 +165,15 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="subwarden_Register_student.html">Register</a></li>
-                <li class="nav-item"> <a class="nav-link" href="Subwardern_view_student.html">View</a></li>
+                <li class="nav-item"> <a class="nav-link" href="warden_view_student.html">View</a></li>
                
               </ul>
             </div>
 
             
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <!-- <i class="icon-bar-graph menu-icon"></i> -->
-
-              <span class="menu-title">Manage Room</span>
-
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="subwarden_reg_room.html">Register Room</a></li>
-                <li class="nav-item"> <a class="nav-link" href="subwarden_availableRoom.html">Register Member</a></li>
-                <li class="nav-item"> <a class="nav-link" href="subwarden_view_assign_room.html">Room Assign info</a></li>
-              </ul>
-            </div>
-          </li>
+          
+          
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <!-- <i class="icon-grid-2 menu-icon"></i> -->
@@ -198,8 +182,8 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="subwarden_complain_view.html">View Complain</a></li>
-                <li class="nav-item"> <a class="nav-link" href="subwarden_complain_Approvedview.html">Approve Complain</a></li>
+                <li class="nav-item"> <a class="nav-link" href="warden_complain_view.html">View Complain</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Approve Complain</a></li>
               </ul>
             </div>
           </li>
@@ -210,8 +194,8 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="Daily_report.html"> Daily  Report</a></li>
-                <li class="nav-item"><a class="nav-link" href="Monthly_report.html"> Monthly  Report</a></li>
+                <li class="nav-item"><a class="nav-link" href=""> Daily  Report</a></li>
+                <li class="nav-item"><a class="nav-link" href=""> Monthly  Report</a></li>
               </ul>
             </div>
           </li>
@@ -271,25 +255,32 @@
            <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h4  style="text-align: center;">Registed Student</h4><br><br>
+                <h4  style="text-align: center;">All complaint</h4><br><br>
                 
                 <div class="table-responsive">
-                  <table class="table table-striped" id="wardenTable">
-                      <thead>
-                          <tr>
-                              <th>Id</th>
-                              <th>Email</th>
-                              <th>First name</th>
-                              <th>Last name</th>
-                              <th>User Index</th>
-                              <th>Action</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-                  </table>
+                  <table class="table table-striped" id="ApprovedComplaintsTable">
+                    <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Room Number</th>
+                          <th>Property Type</th>
+                          <th>Property Unique ID</th>
+                          <th>complainant</th>
+                          <th>Description</th>
+                          <th>Image Name</th>
+                          <th>Complaint Date</th>
+                          <th>Approved Date</th>
+                          <th>Status</th>
+                         
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
               </div>
               
+
+            
               </div>
             </div>
           </div>

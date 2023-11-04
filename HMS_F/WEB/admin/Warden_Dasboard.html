@@ -2,41 +2,34 @@
 <html lang="en">
 
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
   <script src="ajax/jquery-3.6.1.min.js"></script>
-<script src="ajax/student.js"></script>
-
-
-
-
+  <script src="../ajax/Authentication.js"></script>
 
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Registered Student</title>
+  <title>Hostal Managment System</title>
   <!-- plugins:css -->
-   <link rel="stylesheet" href="vendors/feather/feather.css"> 
+  <link rel="stylesheet" href="vendors/feather/feather.css"> 
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  
+  
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css"> 
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+  
+
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+
   <!-- endinject -->
   <link rel="shortcut icon" href="images/LOGO_OF_RUHUNA.jpg" />
-
-
-
-
-
-
-
-
-
 </head>
 <body>
   <div class="container-scroller">
@@ -153,7 +146,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="subwarden.html">
+            <a class="nav-link" href="Warden_Dasboard.html">
               <!-- <i class="icon-grid menu-icon"></i>  -->
               <span class="menu-title">Dashboard</span>
             </a>
@@ -166,30 +159,15 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="subwarden_Register_student.html">Register</a></li>
-                <li class="nav-item"> <a class="nav-link" href="Subwardern_view_student.html">View</a></li>
+                <li class="nav-item"> <a class="nav-link" href="warden_view_student.html">View</a></li>
                
               </ul>
             </div>
 
             
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <!-- <i class="icon-bar-graph menu-icon"></i> -->
-
-              <span class="menu-title">Manage Room</span>
-
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="subwarden_reg_room.html">Register Room</a></li>
-                <li class="nav-item"> <a class="nav-link" href="subwarden_availableRoom.html">Register Member</a></li>
-                <li class="nav-item"> <a class="nav-link" href="subwarden_view_assign_room.html">Room Assign info</a></li>
-              </ul>
-            </div>
-          </li>
+          
+          
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <!-- <i class="icon-grid-2 menu-icon"></i> -->
@@ -198,8 +176,8 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="subwarden_complain_view.html">View Complain</a></li>
-                <li class="nav-item"> <a class="nav-link" href="subwarden_complain_Approvedview.html">Approve Complain</a></li>
+                <li class="nav-item"> <a class="nav-link" href="warden_complain_view.html">View Complain</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Approve Complain</a></li>
               </ul>
             </div>
           </li>
@@ -210,8 +188,8 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="Daily_report.html"> Daily  Report</a></li>
-                <li class="nav-item"><a class="nav-link" href="Monthly_report.html"> Monthly  Report</a></li>
+                <li class="nav-item"><a class="nav-link" href=""> Daily  Report</a></li>
+                <li class="nav-item"><a class="nav-link" href=""> Monthly  Report</a></li>
               </ul>
             </div>
           </li>
@@ -264,54 +242,98 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          
-
-
-           <!-- view data -->
-           <div class="col-lg-12 grid-margin stretch-card">
-            <div class="card">
-              <div class="card-body">
-                <h4  style="text-align: center;">Registed Student</h4><br><br>
-                
-                <div class="table-responsive">
-                  <table class="table table-striped" id="wardenTable">
-                      <thead>
-                          <tr>
-                              <th>Id</th>
-                              <th>Email</th>
-                              <th>First name</th>
-                              <th>Last name</th>
-                              <th>User Index</th>
-                              <th>Action</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-                  </table>
-              </div>
-              
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                  <h3 class="font-weight-bold">Welcome Wardener</h3>
+               </div>
+                <div class="col-12 col-xl-4">
+                 <div class="justify-content-end d-flex">
+                  
+                 </div>
+                </div>
               </div>
             </div>
           </div>
-          <!-- end of view data -->
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card tale-bg">
+                <div class="card-people mt-auto">
+                  <img src="images/Institute-Hostel-Management-System-1.jpg" alt="people" style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                  <div class="weather-info">
+                    <div class="d-flex">
+                      <div>
+                       
+                      </div>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin transparent">
+              <div class="row">
+                <div class="col-md-6 mb-4 stretch-card transparent">
+                  <div class="card card-tale">
+                    <div class="card-body" style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
+                      <p class="mb-4">Registed Student</p>
+                      <p class="fs-30 mb-2" id="totalStudents"></p>
+                      <script>
+                        // Make an Ajax request
+                        $.ajax({
+                            url: "http://localhost:8080/api/user/totalRegisteredStudents",
+                            type: "GET",
+                            dataType: "json",
+                            success: function (data) {
+                                // Display the data on the page
+                                $("#totalStudents").text( data);
+                            },
+                            error: function () {
+                                $("#totalStudents").text("Error fetching data");
+                            }
+                        });
+                    </script>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 stretch-card transparent">
+                  <div class="card card-dark-blue">
+                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
+                      <p class="mb-4">Total complain</p>
+                      <p class="fs-30 mb-2">12</p>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                  <div class="card card-light-blue">
+                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
+                      <p class="mb-4">Student</p>
+                      <p class="fs-30 mb-2">420</p>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 stretch-card transparent">
+                  <div class="card card-light-danger">
+                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
+                      <p class="mb-4">Hostel</p>
+                      <p class="fs-30 mb-2">01</p>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
           
-                   
-
-          
-            
-          
-
-
-
-
-
-
-
-
-
-
+        
 
 
 
@@ -346,6 +368,7 @@
   <!-- Custom js for this page-->
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
+  <script src="../../js/chart.js"></script>
   <!-- End custom js for this page-->
 </body>
 
