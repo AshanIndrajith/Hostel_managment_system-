@@ -2,18 +2,13 @@
 <html lang="en">
 
 <head>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="ajax/room.js"></script>
   <script src="ajax/jquery-3.6.1.min.js"></script>
-<script src="ajax/complaint.js"></script>
-
-
-
-
-
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Registered Wardan</title>
+  <title>Register Room</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css"> 
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -266,44 +261,40 @@
           
 
 
-           <!-- view data -->
-           <div class="col-lg-12 grid-margin stretch-card">
+           <!-- insert data -->
+           <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
             <div class="card">
-              <div class="card-body">
-                <h4  style="text-align: center;">All complaint</h4><br><br>
+              <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
+                <h4 style="text-align: center;">Register Rooms</h4><br><br>
                 
-                <div class="table-responsive">
-                  <table class="table table-striped" id="ApprovedComplaintsTable">
-                    <thead>
-                        <tr>
-                          <th>ID</th>
-                          <th>Room Number</th>
-                          <th>Property Type</th>
-                          <th>Property Unique ID</th>
-                          <th>complainant</th>
-                          <th>Description</th>
-                          <th>Image Name</th>
-                          <th>Complaint Date</th>
-                          <th>Approved Date</th>
-                          <th>Status</th>
-                         
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-              </div>
-              
-
-            
+                <form class="forms-sample">
+                  <div class="form-group row">
+                    <label for="index" class="col-sm-3 col-form-label">Room Number:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="room_num" placeholder="xxx">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="fname" class="col-sm-3 col-form-label">Room Capacity:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="cap" placeholder="4" readonly>
+                    </div>
+                  </div>
+                  
+                 
+                 
+                
+                  <div style="display: flex; justify-content: flex-end;">
+                    <button type="button" class="btn btn-primary mr-2" onclick="saveRoom()">Submit</button>
+                    <button type="reset" class="btn btn-warning">Cancel</button>
+                  </div>
+                </form>
+                
               </div>
             </div>
           </div>
-          <!-- end of view data -->
+          <!-- end of student data -->
 
-
-          
-                   
 
           
             

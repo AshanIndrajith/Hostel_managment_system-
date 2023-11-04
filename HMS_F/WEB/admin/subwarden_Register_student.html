@@ -3,23 +3,34 @@
 
 <head>
   <!-- Required meta tags -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="ajax/Authentication.js"></script>
+  <script src="ajax/jquery-3.6.1.min.js"></script>
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Hostal Managment System</title>
+  <title>Student Register</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/feather/feather.css">
+  <link rel="stylesheet" href="vendors/feather/feather.css"> 
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css"> 
   <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+ <link rel="shortcut icon" href="images/LOGO_OF_RUHUNA.jpg" />
+
+
+  
+
+
+
+
 </head>
 <body>
   <div class="container-scroller">
@@ -27,7 +38,6 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/LOGO_OF_RUHUNA.jpg" class="mr-3" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -116,6 +126,7 @@
         </button>
       </div>
     </nav>
+  
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
@@ -138,53 +149,57 @@
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="subwarden.html">
-              <i class="icon-grid menu-icon"></i>
+              <!-- <i class="icon-grid menu-icon"></i>  -->
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-            <i class="icon-grid-2 menu-icon"></i> 
-              <span class="menu-title">Manage Student</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="tables">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="subwarden_Register_student.html">Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="Subwardern_view_student.html">View</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Manage Room</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="Room_Allocate.html">Room Registration</a></li>
-              </ul>
-            </div>
-          </li>
-        
-          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Manage Complaint</span>
+              <!-- <i class="icon-layout menu-icon"></i> -->
+              <span class="menu-title">Manage Student</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="subwarden_view_complain.html">View Complaint</a></li>
-                <li class="nav-item"> <a class="nav-link" href="update_complaint.html">Update Complaint</a></li>
-             
+                <li class="nav-item"> <a class="nav-link" href="subwarden_Register_student.html">Register</a></li>
+                <li class="nav-item"> <a class="nav-link" href="Subwardern_view_student.html">View</a></li>
+               
+              </ul>
+            </div>
+
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+              <!-- <i class="icon-bar-graph menu-icon"></i> -->
+
+              <span class="menu-title">Manage Room</span>
+
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="subwarden_reg_room.html">Register Room</a></li>
+                <li class="nav-item"> <a class="nav-link" href="subwarden_availableRoom.html">Register Member</a></li>
+                <li class="nav-item"> <a class="nav-link" href="subwarden_view_assign_room.html">Room Assign info</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <!-- <i class="icon-grid-2 menu-icon"></i> -->
+              <span class="menu-title">Manage Complain</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="subwarden_complain_view.html">View Complain</a></li>
+                <li class="nav-item"> <a class="nav-link" href="subwarden_complain_Approvedview.html">Approve Complain</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-              <i class="icon-columns menu-icon"></i>
               <span class="menu-title">Report Generate</span>
               <i class="menu-arrow"></i>
             </a>
@@ -195,8 +210,6 @@
               </ul>
             </div>
           </li>
-          
-         
           <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
               <i class="icon-contract menu-icon"></i>
@@ -246,52 +259,78 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-            <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
-                <div class="card">
-                  <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
-                    <h4 style="text-align: center;">Student Registration</h4><br><br>
-                    
-                    <form class="forms-sample">
-                      <div class="form-group row">
-                        <label for="index" class="col-sm-3 col-form-label">Index Number:</label>
-                        <div class="col-sm-9">
-                          <input type="text" class="form-control" id="index" placeholder="TG/2019/xxx">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="fname" class="col-sm-3 col-form-label">First Name:</label>
-                        <div class="col-sm-9">
-                          <input type="text" class="form-control" id="fname" placeholder="First Name">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="lname" class="col-sm-3 col-form-label">Last Name:</label>
-                        <div class="col-sm-9">
-                          <input type="text" class="form-control" id="lname" placeholder="Last Name">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="email" class="col-sm-3 col-form-label">Email:</label>
-                        <div class="col-sm-9">
-                          <input type="text" class="form-control" id="email" placeholder="user@gmail.com">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="password" class="col-sm-3 col-form-label">Password:</label>
-                        <div class="col-sm-9">
-                          <input type="password" class="form-control" id="password" placeholder="Password">
-                        </div>
-                      </div>
-                    
-                      <div style="display: flex; justify-content: flex-end;">
-                        <button type="button" class="btn btn-primary mr-2" onclick="saveStudent()">Submit</button>
-                        <button type="reset" class="btn btn-warning">Cancel</button>
-                      </div>
-                    </form>
-                    
+          
+
+
+           <!-- insert data -->
+           <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
+            <div class="card">
+              <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
+                <h4 style="text-align: center;">Student Registration</h4><br><br>
+                
+                <form class="forms-sample">
+                  <div class="form-group row">
+                    <label for="index" class="col-sm-3 col-form-label">Index Number:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="index" placeholder="TG/2019/xxx">
+                    </div>
                   </div>
-                </div>
+                  <div class="form-group row">
+                    <label for="fname" class="col-sm-3 col-form-label">First Name:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="fname" placeholder="First Name">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="lname" class="col-sm-3 col-form-label">Last Name:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label">Email:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="email" placeholder="user@gmail.com">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="password" class="col-sm-3 col-form-label">Password:</label>
+                    <div class="col-sm-9">
+                      <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                  </div>
+                
+                  <div style="display: flex; justify-content: flex-end;">
+                    <button type="button" class="btn btn-primary mr-2" onclick="saveStudent()">Submit</button>
+                    <button type="reset" class="btn btn-warning">Cancel</button>
+                  </div>
+                </form>
+                
               </div>
+            </div>
+          </div>
+          <!-- end of student data -->
+
+
+          
+            
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+     
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
