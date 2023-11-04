@@ -1,11 +1,5 @@
 
-
-
 getAllWarden() 
-
-
-
-
 
 function getAllWarden() {
   $.ajax({
@@ -34,8 +28,7 @@ function getAllWarden() {
                   '<td>' + firstName + '</td>' +
                   '<td>' + lastName + '</td>' +
                   '<td>' + email + '</td>' +
-                  '<td><button type="button" class="update btn btn-success" onclick="getStudentrDetails(' + id + ')" >Update</button> <button type="button" onclick="deleteUser(' + id + ') " class="delete btn btn-danger">Delete</button></td>' +
-                 
+                  '<td><button type="button" class="update btn btn-success" onclick="getWardenDetails(' + id + ')" >Update</button> <button type="button" onclick="deleteWarden(' + id + ')" class="delete btn btn-danger">Delete</button></td>' +
                   '</tr>';
 
               tableBody.append(newRow);
@@ -52,7 +45,7 @@ function getAllWarden() {
 
 
 
-function getStudentrDetails(id) {
+function getStudesntrDetails(id) {
 
 
 
@@ -133,6 +126,91 @@ function getWardenDetails(id) {
     }
   });
 }
+
+//make a function for update warden details
+function UpdateWarden() {
+
+   
+  
+  var id = $('#id').val();
+  var index = $('#index').val();
+  var fname = $('#fname').val();
+  var lname = $('#lname').val();
+  var email = $('#email').val();
+
+
+
+
+  // Send AJAX request
+  $.ajax({
+      method: "PUT",
+      contentType: "application/json",
+      url: "http://localhost:8080/api/user/update/" + id,
+      async: true,
+      data: JSON.stringify({
+          "enabled": true,
+          "fname": fname,
+          "lname": lname,
+          "email": email,
+          "user_index": index
+      }),
+      success: function (data) {
+        Swal.fire({
+
+          width: '400px', // Set the width of the pop-up box
+          heightAuto: false, // Prevent automatic height adjustment
+          position: 'center',
+          icon: 'success',
+          title: 'Your work has been saved',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        
+        // Delay the redirection for 3 seconds (3000 milliseconds)
+        setTimeout(function() {
+          window.location.href = 'View_warden.html';
+        }, 1000);
+
+        
+      },
+      error: function (xhr, status, error) {
+          if (error.hasOwnProperty('message')) {
+              alert("Error Message: " + error.message);
+          } else {
+              alert("Unknown Error Occurred");
+          }
+      }
+  });
+}
+
+function deleteWarden(empID) {
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      $.ajax({
+        method: "DELETE",
+        url: "http://localhost:8080/api/user/delete/" + empID,
+        async: true,
+        success: function(data) {
+          
+          window.location.href = "View_warden.html"; // Removed extra ".html"
+        },
+        error: function(xhr, exception) {
+          alert("Error");
+        }
+      });
+    }
+  });
+}
+
 
 
 // function deleteUser(empID){
