@@ -23,6 +23,9 @@ public class ReportService {
 
     @Autowired
     private ComplainRepo complainRepo;
+
+
+
     public String exportReport(String reportFormat) throws FileNotFoundException, JRException {
         String path = "F:\\hostel management system\\Hostel_managment_system-\\HMS_BACKEND\\pdf";
         List<Complain> complaints = (List<Complain>) complainRepo.findAll();
