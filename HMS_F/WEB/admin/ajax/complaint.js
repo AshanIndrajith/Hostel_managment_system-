@@ -1,5 +1,5 @@
 
-getA3llComplaints() 
+getAllComplaints() 
 
 function saveComplain() {
 
@@ -109,4 +109,3 @@ function getAllComplaints() {
         }
     });
 }
-.
