@@ -71,7 +71,8 @@ function getStudentrDetails(id) {
         console.log(index)
 
         // Construct the URL for the new page with query parameters
-        var url = "update_student.html" +
+         var url = "update_student.html" +
+        // var url="update_warden.html"+
           "?id=" + encodeURIComponent(id) +
           "&fname=" + encodeURIComponent(fname) +
           "&lname=" + encodeURIComponent(lname) +
