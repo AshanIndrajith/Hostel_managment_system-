@@ -85,4 +85,20 @@ public class ComplainController {
 
 
 
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateComplain(@PathVariable("id") Long id, @RequestBody Complain complain) {
+        Complain existingComplain = complainService.getComplainById(id);
+        if (existingComplain != null) {
+            existingComplain.setStatus(complain.getStatus());
+
+
+            Complain updatedComplainObj = complainService.updateComplain(existingComplain);
+            return ResponseEntity.ok(updatedComplainObj);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
+
 }

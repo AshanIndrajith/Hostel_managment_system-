@@ -44,4 +44,10 @@ public class ComplainService {
     }
 
 
+    public Complain updateComplain(Complain complain) {
+        return complainRepo.save(complain);
+    }
+
+
+
 }
