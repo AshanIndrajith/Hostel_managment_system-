@@ -78,5 +78,11 @@ public class ComplainController {
 
 
 
+    @GetMapping("/perDay")
+    public List<Object[]> findAllComplaintPerDate() {
+        return complainService.findAllComplaint();
+    }
+
+
 
 }

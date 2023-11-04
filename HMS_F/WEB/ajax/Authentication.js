@@ -1,6 +1,5 @@
-
-
-
+getUserProfile();
+  
 function saveEmployee() {
     var enabled = true; // Change as needed
     var fname = $('#fname').val();
@@ -144,10 +143,6 @@ function resetForm() {
 
 
 
-
-
-
-
   function updateCustomer() {
     let username = $('#username').val();
     let password = $('#password').val();
@@ -174,7 +169,9 @@ function resetForm() {
             if (data && data.token) {
                 var token = data.token;
                 console.log('Received Token:', token);
+                localStorage.setItem('token', token);
                 decodeJwt(token)
+            
 
 
             } else {
@@ -235,6 +232,73 @@ function redirectToPanel(userRole) {
             console.log(userRole);
     }
 }
+
+
+
+
+
+
+
+
+
+// function getUserProfile() {
+//     const token = localStorage.getItem('token');
+//     console.log(token)
+//     const headers = {
+//         'Authorization':`Bearer ${token}`
+//     };
+//     console.log(headers)
+
+//     $.ajax({
+//         method: 'GET',
+//         url: 'http://localhost:8080/api/auth/userprofile',
+//         headers: headers,
+//         success: function(data) {
+//             // Handle the successful response here
+//             console.log('User profile data:', data);
+//         },
+//         error: function(xhr, status, error) {
+//             // Handle errors here
+//             console.error('Error loading user profile:', error);
+//         }
+//     });
+// }
+
+
+
+function getUserProfile() {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        console.error('No token found in localStorage.');
+        return;
+    }
+
+    const headers = {
+        'Authorization': `Bearer ${token}`
+    };
+
+    $.ajax({
+        method: 'GET',
+        url: 'http://localhost:8080/api/auth/UserProfile',
+        headers: headers,
+        success: function(data) {
+            // Handle the successful response here
+            console.log('User profile data:', data);
+            console.log('User index:', data.user_index);
+            document.getElementById('userIndex').textContent = data.user_index;
+        },
+        error: function(xhr, status, error) {
+            // Handle errors here
+            console.error('Error loading user profile:', error);
+        }
+    });
+}
+
+
+
+
+
 
 
 
