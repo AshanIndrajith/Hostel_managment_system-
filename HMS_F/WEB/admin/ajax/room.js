@@ -86,8 +86,6 @@ function getAVailbleRoom() {
                     '<td>' + room_number + '</td>' +
                     '<td>' + available_capacity + '</td>' +
                     '<td><button type="button" class="update btn btn-success" onclick="getRoomNumber(\'' + room_number + '\')">Assign</button> ' +
-
-                   
                     '</tr>';
   
                 tableBody.append(newRow);
@@ -99,8 +97,6 @@ function getAVailbleRoom() {
             console.error("hello");
         }
     });
-
-
   }
 
 
