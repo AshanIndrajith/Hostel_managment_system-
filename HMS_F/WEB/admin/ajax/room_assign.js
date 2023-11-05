@@ -15,16 +15,49 @@ function AssignRoom() {
             
         }),
         success: function (data) {
-            Swal.fire('Room allocation has succeeded!', 'success');
-   
-           
+            // alert("Room saved successfully.");
+            Swal.fire({
+
+                width: '400px', // Set the width of the pop-up box
+                heightAuto: false, // Prevent automatic height adjustment
+                position: 'center',
+                icon: 'success',
+                title: 'Your work has been saved',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 3000
+              });
+              
+              // Delay the redirection for 3 seconds (3000 milliseconds)
+              setTimeout(function() {
+                window.location.href = 'availableRoom.html';
+              }, 1000);
+            // resetForm();
+        }, success: function (data) {
+            Swal.fire({
+
+                width: '400px', // Set the width of the pop-up box
+                heightAuto: false, // Prevent automatic height adjustment
+                position: 'center',
+                icon: 'success',
+                title: 'Successfully Added!',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 3000
+              });
+              
+              // Delay the redirection for 3 seconds (3000 milliseconds)
+              setTimeout(function() {
+                window.location.href = 'availableRoom.html';
+              }, 1000);
+            // resetForm();
         },
         error: function (xhr, status, error) {
-            if (error.hasOwnProperty('message')) {
-                alert("Error Message: " + error.message);
-            } else {
-                alert("User is already assigned to a room");
-            }
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!'
+              })
         }
     });
 }
