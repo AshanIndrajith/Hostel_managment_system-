@@ -176,7 +176,6 @@ function updateComplain(id) {
   let cid = id
   let status = "Approved";
   let date = getCurrentDate();
-  alert(date)
  
 
   $.ajax({
@@ -194,7 +193,7 @@ function updateComplain(id) {
      
            alert("updated");
       
-      window.location.href = "subwarden_complain_Approvedview.html";
+      window.location.href = "warden_complain_view.html";
     },
     error: function (xhr, exception) {
       alert("Error");
