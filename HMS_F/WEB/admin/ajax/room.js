@@ -1,7 +1,7 @@
 getAVailbleRoom()
 
 getAssignRoom()
-getRoomNumber()
+
 
 function saveRoom() {
     var roomNumber = $('#room_num').val();
@@ -136,7 +136,7 @@ function getAssignRoom() {
                 var  m3 = room[3];
                 var  m4 = room[4];
                 
-  
+
                 var newRow = '<tr>' +
                     '<td>' + room_number + '</td>' +
                   

@@ -114,7 +114,9 @@ function saveWarden() {
     var lname = $('#lname').val();
     var email = $('#email').val();
     var password = $('#password').val();
-    var role = 'WARDEN'; // Modify as needed
+    var role =  $("#role").val();// Modify as needed
+
+  
    
 
     // Send AJAX request

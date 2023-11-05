@@ -28,8 +28,11 @@ public interface RoomAssignmentRepository extends JpaRepository<Room_assignment,
     List<Room_assignment> callCreateRoomAssignmentView(@Param("roomNumber") String roomNumber);
 
 
-    @Query(value = "SELECT assignment_id, user_id, room_id, assignment_date FROM room_assignment_view WHERE room_id = ?1", nativeQuery = true)
+    @Query(value = "SELECT assignment_id, user_id, room_id, assignment_date FROM  room_assignment WHERE room_id = ?1", nativeQuery = true)
     List<Room_assignment> findRoomAssignmentsByRoomNumber(String roomNumber);
+
+
+
 
 
 }

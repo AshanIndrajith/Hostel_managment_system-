@@ -43,20 +43,20 @@
 
 
   function deallocate(ID) {
-   
-  
     $.ajax({
       method: "DELETE",
       url: "http://localhost:8080/api/roomAssign/delete/" + ID,
       async: true,
       success: function(data) {
-
-    Swal.fire('Deallocated!', 'The room assignment has been deallocated.', 'success');
-        window.location.href = "assigningRoomStudent.html"; // Removed extra ".html"
+        Swal.fire('Deallocated!', 'The room assignment has been deallocated.', 'success')
+          .then(() => {
+            window.location.href = "assigningRoomStudent.html"; // Removed extra ".html"
+          });
       },
       error: function(xhr, status, error) {
         alert("Error: " + status); // Display the error message
       }
     });
   }
+  
   
