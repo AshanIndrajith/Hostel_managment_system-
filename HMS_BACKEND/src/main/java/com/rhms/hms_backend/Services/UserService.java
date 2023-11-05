@@ -66,6 +66,16 @@ public class UserService {
     }
 
 
+    public List<Object[]> findDeanData(){
+        return userRepo.findDeanData();
+    }
+
+
+    public List<Object[]> findSwardenData(){
+        return userRepo.findSwardenData();
+    }
+
+
     public User getUserById(Long id) {
         return (User) userRepo.findById(id).orElse(null);
     }

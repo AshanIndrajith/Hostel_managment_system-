@@ -88,6 +88,18 @@ public class UserController {
     }
 
 
+    @GetMapping("/Dean")
+    public List<Object[]> getDeanData() {
+        return userService.findDeanData();
+    }
+
+
+    @GetMapping("/SWarden")
+    public List<Object[]> getSwardenData() {
+        return userService.findSwardenData();
+    }
+
+
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
