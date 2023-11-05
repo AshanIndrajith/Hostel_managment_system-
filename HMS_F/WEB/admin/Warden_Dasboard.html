@@ -108,15 +108,37 @@
               <img src="images/faces/face28.jpg" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Settings
+              <a class="dropdown-item" id="settingsMenuItem">
+                  <i class="ti-settings text-primary"></i>
+                  Settings
               </a>
-              <a class="dropdown-item">
-                <i class="ti-power-off text-primary"></i>
-                Logout
+              <a class="dropdown-item" id="logoutMenuItem">
+                  <i class="ti-power-off text-primary"></i>
+                  Logout
               </a>
-            </div>
+          </div>
+          
+
+
+            <script>
+              // Get the Logout menu item by its ID
+                        const logoutMenuItem = document.getElementById('logoutMenuItem');
+
+                        // Add a click event listener to the Logout menu item
+                        logoutMenuItem.addEventListener('click', function() {
+                             logout(); // Call your logout function when Logout is clicked
+                        });
+
+                        function logout() {
+                            // Clear the user's session or token
+                            localStorage.removeItem('token'); // Assuming you're using localStorage to store the token
+
+                            // Redirect the user to the login page
+                            window.location.href = '../login/index.html'; // Replace 'login.html' with the actual URL of your login page
+                  }
+            </script>
+
+
           </li>
           
         </ul>
