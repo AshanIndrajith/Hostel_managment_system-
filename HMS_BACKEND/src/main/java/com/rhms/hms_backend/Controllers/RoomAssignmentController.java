@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/api/roomAssign")
@@ -36,4 +38,32 @@ public class RoomAssignmentController {
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error: " + e.getMessage());
             }
         }
+
+
+
+    @DeleteMapping("/delete/{userId}")
+    public ResponseEntity<String> deleteRoomAssignmentByUserId(@PathVariable String userId) {
+        roomAssignmentService.deleteRoomAssignmentByUserId(userId);
+        return new ResponseEntity<>("Room assignments for user " + userId + " have been deleted", HttpStatus.OK);
+    }
+
+
+    @PostMapping("/create-view")
+    public ResponseEntity<List<Room_assignment>> callCreateRoomAssignmentView(@RequestParam String roomNumber) {
+        List<Room_assignment> result = roomAssignmentService.callCreateRoomAssignmentView(roomNumber);
+
+        if (result != null && !result.isEmpty()) {
+            return new ResponseEntity<>(result, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
+
+    @GetMapping("/getByRoom")
+    public List<Room_assignment> getAllRoomAssignments(@RequestParam String roomNumber) {
+        return roomAssignmentService.findRoomAssignmentsByRoomNumber(roomNumber);
+    }
+
 }
