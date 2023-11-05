@@ -104,6 +104,16 @@
                 <reportElement x="39" y="99" width="100" height="30" uuid="16256681-aeaf-467c-831f-d55d5aa00ab9"/>
                 <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
             </textField>
+            <staticText>
+                <reportElement style="Column header" x="330" y="0" width="226" height="65" forecolor="#1A0606" backcolor="#F52825" uuid="587f7ca5-3f9d-4cb9-9860-94cb52bf8ea5"/>
+                <box padding="13">
+                    <pen lineWidth="1.0" lineStyle="Dashed"/>
+                </box>
+                <textElement>
+                    <font size="26"/>
+                </textElement>
+                <text><![CDATA[Monthly Report]]></text>
+            </staticText>
         </band>
     </title>
     <columnHeader>
@@ -303,10 +313,6 @@
                 </textElement>
                 <text><![CDATA[Hostel Managment System]]></text>
             </staticText>
-            <textField>
-                <reportElement x="475" y="14" width="100" height="30" uuid="9ce073fc-ebb9-4765-aee5-2cc65916de03"/>
-                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
-            </textField>
         </band>
     </lastPageFooter>
 </jasperReport>

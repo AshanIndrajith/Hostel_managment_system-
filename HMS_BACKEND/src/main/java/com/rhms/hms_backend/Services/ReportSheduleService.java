@@ -15,7 +15,7 @@ public class ReportSheduleService {
     @Autowired
     private ReportService reportService;
 
-    @Scheduled(cron = "0 46 19 * * ?") // Daily at 00:00:00
+    @Scheduled(cron = "0 00 21 * * ?") // Daily at 00:00:00
     public void generateDailyReport() {
         try {
             reportService.exportReport();
@@ -24,13 +24,13 @@ public class ReportSheduleService {
         }
     }
 
-//    @Scheduled(cron = "0 21 18 * * ?") // Monthly at the first day of the month        cron = "0 0 0 1 * ?"
-//    public void generateMonthlyReport() {
-//        try {
-////            reportService.exportMonthlyReport();
-//        } catch (FileNotFoundException | JRException e) {
-//
-//        }
-//    }
+    @Scheduled(cron = "0 28 21 * * ?") // Monthly at the first day of the month        cron = "0 0 0 1 * ?"
+    public void generateMonthlyReport() {
+        try {
+            reportService.MonthlyReport();
+        } catch (JRException e) {
+
+        }
+    }
 
 }
