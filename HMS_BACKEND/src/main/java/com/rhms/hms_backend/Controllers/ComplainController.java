@@ -24,10 +24,11 @@ public class ComplainController {
 
     @GetMapping("/view")
     @ResponseBody
-    public ResponseEntity<List<Complain>> listStudents() {
-        Iterable<Complain> damageList = complainService.getAllComplain();
-        return ResponseEntity.ok((List<Complain>) damageList);
+    public ResponseEntity<List<Complain>> listComplains() {
+        Iterable<Complain> complainList = complainService.getAllComplain();
+        return ResponseEntity.ok((List<Complain>) complainList);
     }
+
 
     @PostMapping("/complainSave")
     public ResponseEntity<String> saveComplain(Complain complain, @RequestParam("image") MultipartFile multipartFile) {
@@ -106,6 +107,20 @@ public class ComplainController {
     @ResponseBody
     public ResponseEntity<List<Complain>> listApprovedComplain() {
         Iterable<Complain> approvedList = complainService.ApprovedComplain();
+        return ResponseEntity.ok((List<Complain>) approvedList);
+    }
+
+    @GetMapping("/wardenView")
+    @ResponseBody
+    public ResponseEntity<List<Complain>> listComplainWarden() {
+        Iterable<Complain> approvedList = complainService.ComplaintWardenView();
+        return ResponseEntity.ok((List<Complain>) approvedList);
+    }
+
+    @GetMapping("/deanView")
+    @ResponseBody
+    public ResponseEntity<List<Complain>> listComplainDean() {
+        Iterable<Complain> approvedList = complainService.ComplaintDeanView();
         return ResponseEntity.ok((List<Complain>) approvedList);
     }
 
