@@ -154,6 +154,11 @@ public class RoomController {
         }
     }
 
+    @GetMapping("/totalRoomCount")
+    public int getTotalRegisteredStudents() {
+        return roomService.getRoomCount();
+    }
+
 
 
 

@@ -150,6 +150,16 @@ public class ComplainController {
         return complainService.CreateTodayComplaintView();
     }
 
+    @GetMapping("/totalComplains")
+    public int getTotalComplains() {
+        return complainService.getTotalComplains();
+    }
+
+    @GetMapping("/getPendingComplaintCount")
+    public int getPendingComplaintCount() {
+        return complainService.getPendingComplaintCount();
+    }
+
 
 
 }

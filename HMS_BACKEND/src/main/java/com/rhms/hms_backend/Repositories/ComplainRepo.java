@@ -43,6 +43,12 @@ public interface ComplainRepo extends CrudRepository<Complain, Long> {
     @Procedure(procedureName=" CreateMonthlyComplaintView")
     List<Complain> CreateMonthlyComplaintView();
 
+    @Query(value = "SELECT GetComplaintCount()", nativeQuery = true)
+    int GetComplaintCount();
+
+    @Query(value = "SELECT GetPendingComplaintCount()", nativeQuery = true)
+    int GetPendingComplaintCount();
+
 
 
 

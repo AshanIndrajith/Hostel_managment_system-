@@ -32,6 +32,9 @@ public interface RoomRepo  extends JpaRepository<Room,Long> {
     @Query(nativeQuery = true, value = "SELECT * FROM property WHERE property_id = :id")
     List<Object[]> getPropertiesById(@Param("id") String id);
 
+    @Query(value = "SELECT GetRoomCount()", nativeQuery = true)
+    int GetRoomCount();
+
 
 
 
