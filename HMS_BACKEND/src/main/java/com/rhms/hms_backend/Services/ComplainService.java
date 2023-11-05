@@ -52,6 +52,14 @@ public class ComplainService {
         return (List<Complain>) complainRepo.ApprovedComplaint();
     }
 
+    public Iterable<Complain> ComplaintWardenView() {
+        return (List<Complain>) complainRepo.ComplaintWardenView();
+    }
+
+    public Iterable<Complain> ComplaintDeanView() {
+        return (List<Complain>) complainRepo.ComplaintDeanView();
+    }
+
 
 
 
