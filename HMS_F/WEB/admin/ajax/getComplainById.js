@@ -1,18 +1,17 @@
 
-function getComplaintsById() {
-    var id = 18;
-    alert("working");
+getAllApprovedComplaints()
 
+function getAllApprovedComplaints() {
+    var uid="TG500";
     $.ajax({
         method: "GET",
-        url: "http://localhost:8080/api/complaints/get/" + id,
-        success: function (data, status) {
+        url: "http://localhost:8080/api/complaints/getcomplain?uid="+ uid,
+        success: function(data, status) {
             console.log("Status:", status); // Print the status
             console.log("Data:", data); // Print the data
-
             // Clear existing table rows
-            $('#complainViewByIdTable tbody').empty();
-
+            $('#ApprovedComplaintsTable tbody').empty();
+  
             // Loop through the array and create table rows dynamically
             for (let i = 0; i < data.length; i++) {
                 let complaint = data[i];
@@ -22,6 +21,7 @@ function getComplaintsById() {
                 let property_id = complaint.property_uniq_id; // Corrected property name
                 let description = complaint.description;
                 let img = complaint.imageName;
+                let snum=complaint.complainant;
                 let c_date = complaint.complaint_date;
                 let app=complaint.approved_date;
                 let status = complaint.status;
@@ -32,6 +32,7 @@ function getComplaintsById() {
                     '<td>' + roomNo + '</td>' +
                     '<td>' + propertyType + '</td>' +
                     '<td>' + property_id + '</td>' +
+                    '<td>' + snum + '</td>' +
                     '<td>' + description + '</td>' +
                     '<td><img src="../../../HMS_BACKEND/images/' + id + '/' + img + '"></td>' +
                     '<td>' + c_date + '</td>' +
@@ -39,17 +40,17 @@ function getComplaintsById() {
                     '<td><button type="button" class="update btn btn-success" onclick="updateComplain(' + id + ')" >' + status + '</button>  </td>' +
           
                     '</tr>';
-
-                $('#complainViewByIdTable tbody').append(newRow);
+  
+                $('#ApprovedComplaintsTable tbody').append(newRow);
             }
         },
-        error: function (xhr, status, error) {
+        error: function(xhr, status, error) {
             // Handle the error response
             console.log("Error:", error);
         }
     });
-}
-
+  }
+  
 
 
 

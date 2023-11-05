@@ -2,6 +2,7 @@ package com.rhms.hms_backend.Controllers;
 
 
 import com.rhms.hms_backend.Models.Complain;
+import com.rhms.hms_backend.Models.Room_assignment;
 import com.rhms.hms_backend.Services.ComplainService;
 import com.rhms.hms_backend.Util.FileUploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -122,6 +123,25 @@ public class ComplainController {
     public ResponseEntity<List<Complain>> listComplainDean() {
         Iterable<Complain> approvedList = complainService.ComplaintDeanView();
         return ResponseEntity.ok((List<Complain>) approvedList);
+    }
+
+
+
+    @GetMapping("/complainByUserId")
+    public ResponseEntity<List<Complain>> getComplainById(@RequestParam String uid) {
+        List<Complain> complains = complainService.getComplainByuid(uid);
+        if (complains != null && !complains.isEmpty()) {
+            return ResponseEntity.ok(complains);
+        } else {
+            // You can customize the response for empty results, for example, return 404 Not Found
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
+    @GetMapping("/getcomplain")
+    public List<Complain> getUidComplain(@RequestParam String uid) {
+        return complainService.findcomplain(uid);
     }
 
 
