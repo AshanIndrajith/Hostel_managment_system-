@@ -39,11 +39,25 @@ function saveComplain() {
       contentType: false,
       data: formData,
       success: function (data) {
+        // alert("Room saved successfully.");
+        Swal.fire({
 
-        
-     alert("saved");
-
-      },
+            width: '400px', // Set the width of the pop-up box
+            heightAuto: false, // Prevent automatic height adjustment
+            position: 'center',
+            icon: 'success',
+            title: 'Your complain has been saved',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 5000
+          });
+          
+          // Delay the redirection for 3 seconds (3000 milliseconds)
+          setTimeout(function() {
+            window.location.href = 'availableRoom.html';
+          }, 1000);
+        // resetForm();
+    },
       error: function (xhr, exception) {
         alert("Error occurred while saving damage");
       }
