@@ -2,6 +2,7 @@ package com.rhms.hms_backend.Services;
 
 
 import com.rhms.hms_backend.Models.Complain;
+import com.rhms.hms_backend.Models.Room_assignment;
 import com.rhms.hms_backend.Repositories.ComplainRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,6 +61,16 @@ public class ComplainService {
         return (List<Complain>) complainRepo.ComplaintDeanView();
     }
 
+
+
+    public List<Complain> getComplainByuid(String id) {
+        return complainRepo.getComplainByuid(id);
+    }
+
+
+    public List<Complain> findcomplain(String uid) {
+        return complainRepo.findComplain(uid);
+    }
 
 
 

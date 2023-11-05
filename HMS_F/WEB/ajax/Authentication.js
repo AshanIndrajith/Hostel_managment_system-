@@ -1,4 +1,6 @@
 getUserProfile();
+
+
   
 function saveEmployee() {
     var enabled = true; // Change as needed
@@ -220,7 +222,7 @@ function redirectToPanel(userRole) {
             window.location.href = '../admin/index.html';
             break;
         case 'STUDENT':
-            window.location.href = '../student/index.html';
+            window.location.href = '../admin/Student_index.html';
             break;
 
         case 'WARDEN':
@@ -283,6 +285,11 @@ function getUserProfile() {
             console.log('User index:', data.user_index);
             document.getElementById('userIndex').textContent = data.user_index;
             document.getElementById('userIndex').value = data.user_index;
+            const userIndex = data.user_index;
+
+                resolve(userIndex);
+
+            
 
 
 
@@ -295,6 +302,63 @@ function getUserProfile() {
 }
 
 
+
+
+
+
+
+// function getComplainByUid(uid) {
+
+//     alert("hello")
+
+//     alert(uid)
+//     $.ajax({
+//         method: "GET",
+//         url: "http://localhost:8080/api/complaints/getcomplain?uid="+ uid,
+//         success: function(data, status) {
+//             console.log("Status:", status); // Print the status
+//             console.log("Data:", data); // Print the data
+//             // Clear existing table rows
+//             $('#stComplain tbody').empty();
+  
+//             // Loop through the array and create table rows dynamically
+//             for (let i = 0; i < data.length; i++) {
+//                 let complaint = data[i];
+//                 let id = complaint.id;
+//                 let roomNo = complaint.room_number; // Corrected property name
+//                 let propertyType = complaint.property_type; // Corrected property name
+//                 let property_id = complaint.property_uniq_id; // Corrected property name
+//                 let description = complaint.description;
+//                 let img = complaint.imageName;
+//                 let snum=complaint.complainant;
+//                 let c_date = complaint.complaint_date;
+//                 let app=complaint.approved_date;
+//                 let status = complaint.status;
+              
+  
+//                 let newRow = '<tr>' +
+//                     '<td>' + id + '</td>' +
+//                     '<td>' + roomNo + '</td>' +
+//                     '<td>' + propertyType + '</td>' +
+//                     '<td>' + property_id + '</td>' +
+//                     '<td>' + snum + '</td>' +
+//                     '<td>' + description + '</td>' +
+//                     '<td><img src="../../../HMS_BACKEND/images/' + id + '/' + img + '"></td>' +
+//                     '<td>' + c_date + '</td>' +
+//                     '<td>' + app+ '</td>' +
+//                     '<td><button type="button" class="update btn btn-success" onclick="updateComplain(' + id + ')" >' + status + '</button>  </td>' +
+          
+//                     '</tr>';
+  
+//                 $('#stComplain tbody').append(newRow);
+//             }
+//         },
+//         error: function(xhr, status, error) {
+//             // Handle the error response
+//             console.log("Error:", error);
+//         }
+//     });
+//   }
 
 
 
