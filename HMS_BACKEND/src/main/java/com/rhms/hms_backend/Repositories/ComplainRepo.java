@@ -2,7 +2,9 @@ package com.rhms.hms_backend.Repositories;
 
 import com.rhms.hms_backend.Models.Complain;
 import com.rhms.hms_backend.Models.Room_assignment;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
@@ -30,6 +32,20 @@ public interface ComplainRepo extends CrudRepository<Complain, Long> {
 
     @Query(value = "SELECT * FROM  complain WHERE complainant = ?1", nativeQuery = true)
     List<Complain> findComplain(String uid);
+
+
+    @Transactional
+    @Procedure(procedureName="CreateTodayComplaintView")
+    List<Complain> CreateTodayComplaintView();
+
+
+    @Transactional
+    @Procedure(procedureName=" CreateMonthlyComplaintView")
+    List<Complain> CreateMonthlyComplaintView();
+
+
+
+
 
 
 }
