@@ -2,6 +2,7 @@ getAVailbleRoom()
 
 getAssignRoom()
 
+
 function saveRoom() {
     var roomNumber = $('#room_num').val();
     var roomCapacity = 4;
@@ -101,7 +102,7 @@ function getAVailbleRoom() {
 
 
   function getRoomNumber(room_number) {
-      alert(room_number);
+    
     var rnum = String(room_number); // Convert to a string to preserve leading zeros
 
     // Construct the URL for the new page with query parameters
@@ -135,7 +136,7 @@ function getAssignRoom() {
                 var  m3 = room[3];
                 var  m4 = room[4];
                 
-  
+
                 var newRow = '<tr>' +
                     '<td>' + room_number + '</td>' +
                   
@@ -159,4 +160,6 @@ function getAssignRoom() {
 
 
   }
+
+
 

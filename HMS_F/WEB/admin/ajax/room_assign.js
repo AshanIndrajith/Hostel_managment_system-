@@ -15,7 +15,8 @@ function AssignRoom() {
             
         }),
         success: function (data) {
-            alert("Room saved successfully.");
+            Swal.fire('Room allocation has succeeded!', 'success');
+   
            
         },
         error: function (xhr, status, error) {

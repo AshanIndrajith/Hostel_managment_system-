@@ -2,16 +2,18 @@
 <html lang="en">
 
 <head>
-
-   <!-- Required meta tags -->
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-  <script src="ajax/Authentication.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="ajax/jquery-3.6.1.min.js"></script>
+<script src="ajax/dealocate.js"></script>
+
+
+
+
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Register Warden</title>
+  <title>Register Member</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -265,67 +267,44 @@
           
 
 
-           <!-- insert data -->
-           <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
+           <!-- view data -->
+           <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
-              <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
-                <h4 style="text-align: center;">Warden Registration</h4><br><br>
-                
-                <form class="forms-sample">
-                  <div class="form-group row">
-                    <label for="index" class="col-sm-3 col-form-label">Index Number:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="index" placeholder="Warden Index">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="fname" class="col-sm-3 col-form-label">First Name:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="fname" placeholder="First Name">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="lname" class="col-sm-3 col-form-label">Last Name:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="lname" placeholder="Last Name">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="email" class="col-sm-3 col-form-label">Email:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="email" placeholder="user@gmail.com">
-                    </div>
-                  </div>
+              <div class="card-body">
 
-                  <div class="form-group row">
-                    <label for="email" class="col-sm-3 col-form-label">Role :</label>
-                    <div class="col-sm-9">
-                      <select id="role" name="fuelType" class="form-control">
-                        <option value="WARDEN">WARDEN </option>
-                        <option value="SUBWARDEN">SUBWARDEN</option>
-                        <option value="DEAN">DEAN</option>
-                       
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="password" class="col-sm-3 col-form-label">Password:</label>
-                    <div class="col-sm-9">
-                      <input type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                  </div>
+                <div class="col-sm-6">
+                  <label for="toDate" class="input-label" style="padding-left:50px;">Room Number</label>
+                  <input type="text" class="form-control form-control-user" id="rnum" placeholder="Room Number"><br>
+   
+                  <button type="button" class="update btn btn-success" onclick="getRoomNumber()">Search</button>
+                 
+              </div>
+                <h4  style="text-align: center;"> Room Members</h4><br><br>
                 
-                  <div style="display: flex; justify-content: flex-end;">
-                    <button type="button" class="btn btn-primary mr-2" onclick="saveWarden()">Submit</button>
-                    <button type="reset" class="btn btn-warning">Cancel</button>
-                  </div>
-                </form>
-                
+                <div class="table-responsive">
+                  <table class="table table-striped" id="RoomMembers">
+                      <thead>
+                          <tr>
+                              <th>User Id</th>
+                              <th>Room Number</th>
+                              <th>Assign Date</th>
+                              
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                  </table>
+              </div>
+              
               </div>
             </div>
           </div>
-          <!-- end of student data -->
+          <!-- end of view data -->
 
+
+          
+                   
 
           
             
