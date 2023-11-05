@@ -73,37 +73,47 @@
                 </reportElement>
             </line>
             <staticText>
-                <reportElement x="95" y="0" width="295" height="25" uuid="e622555d-198b-4ccd-a4a1-c59c53304058">
+                <reportElement x="78" y="3" width="295" height="25" uuid="e622555d-198b-4ccd-a4a1-c59c53304058">
                     <property name="local_mesure_unitheight" value="pixel"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
                 <textElement>
-                    <font fontName="Times New Roman" size="19" isBold="true"/>
+                    <font fontName="Times New Roman" size="17" isBold="true"/>
                 </textElement>
                 <text><![CDATA[Hostel Managment System]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="95" y="25" width="205" height="15" uuid="c226e44d-3bb5-4145-b0b3-903bf1d79fde"/>
-                <text><![CDATA[University of Ruhuna]]></text>
             </staticText>
             <image>
                 <reportElement x="20" y="0" width="60" height="70" uuid="6206a43f-5328-4916-b44e-28d512d20033"/>
                 <imageExpression><![CDATA["C:/Users/INSIGHT/Downloads/LOGO_OF_RUHUNA (1).jpg"]]></imageExpression>
             </image>
             <staticText>
-                <reportElement x="95" y="40" width="205" height="15" uuid="69583717-0036-4c55-bc1f-75d65d091c7b"/>
-                <text><![CDATA[Facalty of Technology]]></text>
+                <reportElement x="83" y="26" width="205" height="15" uuid="69583717-0036-4c55-bc1f-75d65d091c7b"/>
+                <text><![CDATA[Facalty of Technology ]]></text>
             </staticText>
             <staticText>
-                <reportElement x="-3" y="100" width="36" height="20" uuid="0f86baff-6386-4f3f-b3fe-2388707babe8"/>
+                <reportElement x="337" y="49" width="36" height="20" uuid="0f86baff-6386-4f3f-b3fe-2388707babe8"/>
                 <box rightPadding="4"/>
                 <textElement textAlignment="Right"/>
                 <text><![CDATA[Date:]]></text>
             </staticText>
             <textField pattern="MMMMM dd, yyyy">
-                <reportElement x="39" y="99" width="100" height="30" uuid="16256681-aeaf-467c-831f-d55d5aa00ab9"/>
+                <reportElement x="375" y="48" width="100" height="30" uuid="16256681-aeaf-467c-831f-d55d5aa00ab9"/>
                 <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
             </textField>
+            <staticText>
+                <reportElement x="320" y="7" width="190" height="70" uuid="63534398-8754-4435-8eee-cba20db995f3">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement>
+                    <font fontName="Times New Roman" size="30" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Daily Report]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="81" y="43" width="205" height="15" uuid="b7a3882c-cb68-447d-a972-fedfcddaf83e"/>
+                <text><![CDATA[University of Ruhuna]]></text>
+            </staticText>
         </band>
     </title>
     <columnHeader>
