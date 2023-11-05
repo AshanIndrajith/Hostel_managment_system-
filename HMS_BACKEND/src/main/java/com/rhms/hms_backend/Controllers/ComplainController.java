@@ -145,5 +145,11 @@ public class ComplainController {
     }
 
 
+    @GetMapping("/dailyComplain")
+    public List<Complain> CreateTodayComplaintView() {
+        return complainService.CreateTodayComplaintView();
+    }
+
+
 
 }

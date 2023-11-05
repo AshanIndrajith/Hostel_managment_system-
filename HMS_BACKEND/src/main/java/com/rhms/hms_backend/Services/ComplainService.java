@@ -4,6 +4,7 @@ package com.rhms.hms_backend.Services;
 import com.rhms.hms_backend.Models.Complain;
 import com.rhms.hms_backend.Models.Room_assignment;
 import com.rhms.hms_backend.Repositories.ComplainRepo;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -72,6 +73,15 @@ public class ComplainService {
         return complainRepo.findComplain(uid);
     }
 
+    @Transactional
+    public List<Complain> CreateTodayComplaintView(){
+        return complainRepo.CreateTodayComplaintView();
+    }
 
+
+    @Transactional
+    public List<Complain> CreateMonthlyComplaintView(){
+        return complainRepo.CreateMonthlyComplaintView();
+    }
 
 }

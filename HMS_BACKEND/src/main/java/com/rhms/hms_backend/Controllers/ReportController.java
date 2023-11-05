@@ -22,9 +22,16 @@ public class ReportController {
 
 
 
-    @GetMapping("/report/{format}")
-    public String generateReport(@PathVariable String format) throws FileNotFoundException, JRException {
-        return reportService.exportReport(format);
+    @GetMapping("/report")
+    public String generateReport() throws FileNotFoundException, JRException {
+        return reportService.exportReport();
+    }
+
+
+
+    @GetMapping("/monthly")
+    public String generateMonthlyReport() throws FileNotFoundException, JRException {
+        return reportService.MonthlyReport();
     }
 
 
