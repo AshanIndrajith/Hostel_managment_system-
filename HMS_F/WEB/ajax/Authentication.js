@@ -232,6 +232,9 @@ function redirectToPanel(userRole) {
         case 'WARDEN':
             window.location.href = '../admin/subwarden.html';
             break;
+        case 'WARDEN':
+                window.location.href = '../admin/Dean_Dashboard.html';
+                break;
         // Add more cases for other roles as needed
         default:
             // Redirect to a default page for unknown roles or handle it as per your requirements

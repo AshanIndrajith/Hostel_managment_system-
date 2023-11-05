@@ -84,4 +84,11 @@ public class ComplainService {
         return complainRepo.CreateMonthlyComplaintView();
     }
 
+    public int getTotalComplains() {
+        return complainRepo.GetComplaintCount();
+    }
+    public int getPendingComplaintCount() {
+        return complainRepo.GetPendingComplaintCount();
+    }
+
 }

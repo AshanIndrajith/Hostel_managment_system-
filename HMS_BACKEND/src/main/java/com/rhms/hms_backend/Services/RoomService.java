@@ -75,8 +75,8 @@ public class RoomService {
         return roomRepo.getPropertiesById(id);
     }
 
-
-
-
+    public int getRoomCount() {
+        return roomRepo.GetRoomCount();
+    }
 
 }
