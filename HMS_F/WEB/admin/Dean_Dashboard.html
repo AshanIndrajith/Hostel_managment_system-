@@ -3,26 +3,31 @@
 
 <head>
 
-  <script src="ajax/jquery-3.6.1.min.js"></script>
-  <script src="ajax/deanComplainView.js"></script>
 
+  <script src="ajax/jquery-3.6.1.min.js"></script>
+  <script src="../ajax/Authentication.js"></script>
 
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Hostal Managment System</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/feather/feather.css">
+  <link rel="stylesheet" href="vendors/feather/feather.css"> 
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  
+  
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+  
+
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+
   <!-- endinject -->
   <link rel="shortcut icon" href="images/LOGO_OF_RUHUNA.jpg" />
 </head>
@@ -31,11 +36,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-
         <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/LOGO_OF_RUHUNA.jpg" class="mr-3" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
       </div>
-
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu"></span>
@@ -213,30 +215,104 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-            <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4  style="text-align: center;">Complaint</h4><br><br>
-                    
-                    <div class="table-responsive">
-                      <table class="table table-striped" id="deanComplainTable">
-                          <thead>
-                              <tr>
-                                  <th>complaint ID</th>
-                                  <th>Room ID</th>
-                                  <th>Category</th>
-                                  <th>Date Submitted</th>
-                                  <th>Action</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                          </tbody>
-                      </table>
-                  </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                  <h3 class="font-weight-bold">Welcome Dean</h3>
+               </div>
+                <div class="col-12 col-xl-4">
+                 <div class="justify-content-end d-flex">
                   
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card tale-bg">
+                <div class="card-people mt-auto">
+                  <img src="images/d_vector.jpg" alt="people" style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                  <div class="weather-info">
+                    <div class="d-flex">
+                      <div>
+                       
+                      </div>
+                     
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="col-md-6 grid-margin transparent">
+              <div class="row">
+                <div class="col-md-6 mb-4 stretch-card transparent">
+                  <div class="card card-tale">
+                    <div class="card-body" style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
+                      <p class="mb-4">Registed Student</p>
+                      <p class="fs-30 mb-2" id="totalStudents"></p>
+                      <script>
+                        // Make an Ajax request
+                        $.ajax({
+                            url: "http://localhost:8080/api/user/totalRegisteredStudents",
+                            type: "GET",
+                            dataType: "json",
+                            success: function (data) {
+                                // Display the data on the page
+                                $("#totalStudents").text( data);
+                            },
+                            error: function () {
+                                $("#totalStudents").text("Error fetching data");
+                            }
+                        });
+                    </script>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 stretch-card transparent">
+                  <div class="card card-dark-blue">
+                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
+                      <p class="mb-4">Total complain</p>
+                      <p class="fs-30 mb-2">12</p>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                  <div class="card card-light-blue">
+                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
+                      <p class="mb-4">Total Rooms</p>
+                      <p class="fs-30 mb-2">420</p>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 stretch-card transparent">
+                  <div class="card card-light-danger">
+                    <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
+                      <p class="mb-4">Hostel</p>
+                      <p class="fs-30 mb-2">01</p>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          
+        
+
+
+
+
+       
+     
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -265,6 +341,7 @@
   <!-- Custom js for this page-->
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
+  <script src="../../js/chart.js"></script>
   <!-- End custom js for this page-->
 </body>
 
