@@ -1,6 +1,7 @@
 getAVailbleRoom()
 
 getAssignRoom()
+getRoomNumber()
 
 function saveRoom() {
     var roomNumber = $('#room_num').val();
@@ -101,7 +102,7 @@ function getAVailbleRoom() {
 
 
   function getRoomNumber(room_number) {
-      alert(room_number);
+    
     var rnum = String(room_number); // Convert to a string to preserve leading zeros
 
     // Construct the URL for the new page with query parameters
@@ -159,4 +160,6 @@ function getAssignRoom() {
 
 
   }
+
+
 
