@@ -2,15 +2,20 @@
 <html lang="en">
 
 <head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="ajax/jquery-3.6.1.min.js"></script>
+<script src="ajax/user.js"></script>
 
-  
-  <script src="ajax/jquery-3.6.1.min.js"></script>
+
+
+
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Generate QR</title>
+  <title>Registered Wardan</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/feather/feather.css">
+  <link rel="stylesheet" href="vendors/feather/feather.css"> 
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
@@ -162,6 +167,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="Register_student.html">Register</a></li>
                 <li class="nav-item"> <a class="nav-link" href="View_student.html">View</a></li>
+                
                
               </ul>
             </div>
@@ -171,15 +177,13 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" >
               <!-- <i class="icon-columns menu-icon"></i> -->
-              <span class="menu-title">Manage Users</span>
+              <span class="menu-title">Manage Wardans</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="Register_wardan.html">Register</a></li>
                 <li class="nav-item"><a class="nav-link" href="View_warden.html">View</a></li>
-                <li class="nav-item"><a class="nav-link" href="View_sbwarden.html">SWarden info</a></li>
-                <li class="nav-item"><a class="nav-link" href="View_dean.html">Dean info</a></li>
               </ul>
             </div>
           </li>
@@ -264,58 +268,37 @@
           
 
 
-
-
-
-
-
-<!-- insert data -->
-<div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
-  <div class="card">
-    <div class="card-body" style="padding-left: 100px; padding-right: 100px; padding-top: 70px; padding-bottom: 100px;">
-      <h4 style="text-align: center;">QR Code Generator</h4><br><br>
-      <form class="forms-sample">
-        <div class="form-group row">
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="qrContent" placeholder="Enter QR Code content">
+           <!-- view data -->
+           <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4  style="text-align: center;">Subwarden Information</h4><br><br>
+                
+                <div class="table-responsive">
+                  <table class="table table-striped" id="sbwardenTable">
+                      <thead>
+                          <tr>
+                              <th>Id</th>
+                              <th>Email</th>
+                              <th>First name</th>
+                              <th>Last name</th>
+                              <th>User Index</th>
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                  </table>
+              </div>
+              
+              </div>
+            </div>
           </div>
+          <!-- end of view data -->
+
+
           
-          
-        </div>
-        <button type="button" class="btn btn-primary mr-6" onclick="generateQRCode()">Generate QR Code</button>
-          
-   
-      </form>
-      <div id="qrCodeImage">
-        <!-- The QR code image will be displayed here -->
-      </div>
-   <a id="downloadLink" style="display:none;" target="_blank">Download QR Code</a>
-
-      <script>
-        function generateQRCode() {
-          var content = document.getElementById('qrContent').value;
-          var imgElement = document.createElement('img');
-          imgElement.src = 'http://localhost:8080/api/qr/qrcode/' + content;
-
-          // Clear previous content and display the QR code image
-          var qrCodeContainer = document.getElementById('qrCodeImage');
-          qrCodeContainer.innerHTML = '';
-          qrCodeContainer.appendChild(imgElement);
-
-          // Display the download link
-          var downloadLink = document.getElementById('downloadLink');
-          downloadLink.style.display = 'block';
-          downloadLink.href = imgElement.src;
-
-          // Suggest a specific file name for the downloaded image
-          downloadLink.download = 'qr_code.png';
-        }
-      </script>
-    </div>
-  </div>
-</div>
-
-
+                   
 
           
             
