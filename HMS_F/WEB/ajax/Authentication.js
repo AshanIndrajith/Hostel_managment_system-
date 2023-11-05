@@ -226,6 +226,10 @@ function redirectToPanel(userRole) {
             break;
 
         case 'WARDEN':
+            window.location.href = '../admin/Warden_Dasboard.html';
+            break;
+
+        case 'WARDEN':
             window.location.href = '../admin/subwarden.html';
             break;
         // Add more cases for other roles as needed
