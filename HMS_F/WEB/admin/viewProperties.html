@@ -2,16 +2,18 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
   <script src="ajax/jquery-3.6.1.min.js"></script>
-  <script src="ajax/complaint.js"></script>
-  <script src="../ajax/Authentication.js"></script>
-  
+<script src="ajax/property.js"></script>
+
+
+
+
+
+  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Complain</title>
+  <title>Register Member</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -25,9 +27,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-
   <link rel="shortcut icon" href="images/LOGO_OF_RUHUNA.jpg" />
-
 
 
 
@@ -147,16 +147,6 @@
           <!-- chat tab ends -->
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -192,7 +182,7 @@
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="Register_wardan.html">Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="View_warden.html">Warden info</a></li>
+                <li class="nav-item"><a class="nav-link" href="View_warden.html">View</a></li>
                 <li class="nav-item"><a class="nav-link" href="View_sbwarden.html">SWarden info</a></li>
                 <li class="nav-item"><a class="nav-link" href="View_dean.html">Dean info</a></li>
               </ul>
@@ -212,6 +202,7 @@
                 <li class="nav-item"> <a class="nav-link" href="availableRoom.html">Register Member</a></li>
                 <li class="nav-item"> <a class="nav-link" href="View_assign_room.html">Room Assign info</a></li>
                 <li class="nav-item"><a class="nav-link" href="assigningRoomStudent.html">Deallocate </a></li>
+                <li class="nav-item"><a class="nav-link" href="viewProperties.html">property info </a></li>
               </ul>
             </div>
           </li>
@@ -275,110 +266,49 @@
         </ul>
       </nav>
       <!-- partial -->
-
-
-
-
-
-
-
-
-
-
-
-
-
       <div class="main-panel">
         <div class="content-wrapper">
           
 
 
-           <!-- insert data -->
-           <div class="col-md-9 grid-margin stretch-card" style="margin-left: 100px;">
+           <!-- view data -->
+           <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
-              <div class="card-body" style="padding-left: 100px;padding-right: 100px;padding-top: 70px;padding-bottom: 100px;">
-                <h4 style="text-align: center;">Add New Complain </h4><br><br>
+              <div class="card-body">
 
-                <script>
-
-                  $(document).ready(function() {
-
-                  
-                  // Read the query parameters from the URL
-                  var params = new URLSearchParams(window.location.search);
-                  var id = params.get("id");
-                  var propertyName = params.get("propertyName");
-                  var propertyUniqueId = params.get("propertyUniqueId");
-                  var roomNumber = params.get("roomNumber");
+                <div class="col-sm-6">
+                  <label for="toDate" class="input-label" style="padding-left:50px;">Room Number</label>
+                  <input type="text" class="form-control form-control-user" id="rnum" placeholder="Room Number"><br>
+   
+                  <button type="button" class="update btn btn-success" onclick="getProperty()">Search</button>
                  
-                  
-
+              </div>
+                <h4  style="text-align: center;"> Room Members</h4><br><br>
+                
+                <div class="table-responsive">
+                  <table class="table table-striped" id="RoomMembers">
+                      <thead>
+                          <tr>
+                              <th>property Name</th>
+                              <th>property Unique Id</th>
+                              <th>roomNumber</th>
+                              
+                             
+                          </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                  </table>
+              </div>
               
-             
-                  // Set the values of the elements on the page
-                 
-                  $('#type').val(propertyName);
-                  $('#pid').val(propertyUniqueId);
-                  $('#rnum').val(roomNumber);
-                
-                 
-
-              });
-              </script>
-                
-                <form class="forms-sample">
-                  <div class="form-group row">
-                    <label for="index" class="col-sm-3 col-form-label">Property ID:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="pid" placeholder="" readonly>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="fname" class="col-sm-3 col-form-label">Property Type:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="type" placeholder="" readonly>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="lname" class="col-sm-3 col-form-label">Room Number :</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="rnum" placeholder="" readonly>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="email" class="col-sm-3 col-form-label">Student ID :</label>
-                    <div class="col-sm-9">
-                    
-                      <input type="text" id="userIndex" name="userIndex">
-
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <label for="email" class="col-sm-3 col-form-label">Image :</label>
-                    <div class="col-sm-9">
-                      <input type="file" class="form-control" id="image" placeholder="">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <label for="password" class="col-sm-3 col-form-label">Description:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="desc" placeholder="">
-                    </div>
-                  </div>
-                
-                  <div style="display: flex; justify-content: flex-end;">
-                    <button type="button" class="btn btn-primary mr-2" onclick="saveComplain()">Submit</button>
-                    <button type="reset" class="btn btn-warning">Cancel</button>
-                  </div>
-                </form>
-                
               </div>
             </div>
           </div>
-          <!-- end of student data -->
+          <!-- end of view data -->
 
+
+          
+                   
 
           
             

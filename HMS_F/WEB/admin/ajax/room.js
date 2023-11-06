@@ -1,4 +1,4 @@
-getAVailbleRoom()
+getAVailbleRoom();
 
 getAssignRoom()
 
@@ -37,7 +37,7 @@ function saveRoom() {
               
               // Delay the redirection for 3 seconds (3000 milliseconds)
               setTimeout(function() {
-                window.location.href = 'availableRoom.html';
+                window.location.href = 'QR_code_Scanner.html';
               }, 1000);
             // resetForm();
         },
