@@ -23,4 +23,8 @@ public class PropertyService {
     public List<Property> getAllProperties() {
         return propertyRepo.findAll();
     }
+
+    public List<Property> getPropertyByRoomNumber(String roomNumber) {
+        return propertyRepo.getPropertyByRoomNumber(roomNumber);
+    }
 }
