@@ -190,10 +190,14 @@ function updateComplain(id) {
      
     }),
     success: function (data) {
+
+
+      Swal.fire('Approved!', 'The complain is Approved .', 'success')
+      .then(() => {
+        window.location.href = "warden_complain_view.html"; // Removed extra ".html"
+      });
      
-           alert("updated");
-      
-      window.location.href = "warden_complain_view.html";
+          
     },
     error: function (xhr, exception) {
       alert("Error");

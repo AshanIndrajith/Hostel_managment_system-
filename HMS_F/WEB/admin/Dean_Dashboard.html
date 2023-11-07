@@ -112,11 +112,31 @@
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" id="logoutMenuItem">
                 <i class="ti-power-off text-primary"></i>
                 Logout
-              </a>
-            </div>
+            </a>
+        </div>
+        
+
+
+          <script>
+            // Get the Logout menu item by its ID
+                      const logoutMenuItem = document.getElementById('logoutMenuItem');
+
+                      // Add a click event listener to the Logout menu item
+                      logoutMenuItem.addEventListener('click', function() {
+                           logout(); // Call your logout function when Logout is clicked
+                      });
+
+                      function logout() {
+                          // Clear the user's session or token
+                          localStorage.removeItem('token'); // Assuming you're using localStorage to store the token
+
+                          // Redirect the user to the login page
+                          window.location.href = '../login/index.html'; // Replace 'login.html' with the actual URL of your login page
+                }
+          </script>
           </li>
           
         </ul>
@@ -286,7 +306,7 @@
                   <div class="card card-light-blue">
                     <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
                       <p class="mb-4">Total Rooms</p>
-                      <p class="fs-30 mb-2">420</p>
+                      <p class="fs-30 mb-2">8</p>
                       
                     </div>
                   </div>
@@ -294,8 +314,23 @@
                 <div class="col-md-6 stretch-card transparent">
                   <div class="card card-light-danger">
                     <div class="card-body"  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius:14%;">
-                      <p class="mb-4">Hostel</p>
-                      <p class="fs-30 mb-2">01</p>
+                      <p class="mb-4">Pending Comptaints</p>
+                      <p class="fs-30 mb-2" id="pendingCount"></p>
+                      <script>
+                        // Make an Ajax request
+                        $.ajax({
+                            url: "http://localhost:8080/api/complaints/getPendingComplaintCount",
+                            type: "GET",
+                            dataType: "json",
+                            success: function (data) {
+                                // Display the data on the page
+                                $("#pendingCount").text( data);
+                            },
+                            error: function () {
+                                $("#pendingCount").text("Error fetching data");
+                            }
+                        });
+                    </script>
                       
                     </div>
                   </div>

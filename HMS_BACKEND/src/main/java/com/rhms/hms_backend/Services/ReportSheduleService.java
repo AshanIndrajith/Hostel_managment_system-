@@ -24,7 +24,7 @@ public class ReportSheduleService {
         }
     }
 
-    @Scheduled(cron = "0 28 21 * * ?") // Monthly at the first day of the month        cron = "0 0 0 1 * ?"
+    @Scheduled(cron = "0 0 0 30 * ?") // Monthly at the first day of the month        cron = "0 0 0 1 * ?"
     public void generateMonthlyReport() {
         try {
             reportService.MonthlyReport();

@@ -54,7 +54,7 @@ function saveComplain() {
           
           // Delay the redirection for 3 seconds (3000 milliseconds)
           setTimeout(function() {
-            window.location.href = 'availableRoom.html';
+            window.location.href = 'QR_code_Scaner.html';
           }, 1000);
         // resetForm();
     },
@@ -62,6 +62,75 @@ function saveComplain() {
         alert("Error occurred while saving damage");
       }
     });
+
+}
+
+
+
+
+
+
+
+
+function saveStudentComplain() {
+
+    
+  let pid = $('#pid').val();
+  let ptype = $('#type').val();
+  let rnum = $('#rnum').val();
+  let sid = $('#userIndex').val();
+  let image = $('#image').prop('files')[0];
+  let desc = $('#desc').val();
+  let status="pending";
+  let approved_date="not assign";
+  let date=getCurrentDate();
+
+
+
+
+  let formData = new FormData();
+  formData.append("property_uniq_id", pid);
+  formData.append("property_type", ptype);
+  formData.append("room_number", rnum);
+  formData.append("complainant", sid);
+  formData.append("image", image);
+  formData.append("description", desc);
+  formData.append("status", status);
+  formData.append("admin_level", approved_date);
+  formData.append("complaint_date", date);
+
+  
+
+  $.ajax({
+    method: "POST",
+    url: "http://localhost:8080/api/complaints/complainSave",
+    processData: false,
+    contentType: false,
+    data: formData,
+    success: function (data) {
+      // alert("Room saved successfully.");
+      Swal.fire({
+
+          width: '400px', // Set the width of the pop-up box
+          heightAuto: false, // Prevent automatic height adjustment
+          position: 'center',
+          icon: 'success',
+          title: 'Your complain has been saved',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 5000
+        });
+        
+        // Delay the redirection for 3 seconds (3000 milliseconds)
+        setTimeout(function() {
+          window.location.href = 'Student_QR_code_Scaner.html';
+        }, 1000);
+      // resetForm();
+  },
+    error: function (xhr, exception) {
+      alert("Error occurred while saving damage");
+    }
+  });
 
 }
 
@@ -110,9 +179,9 @@ function getAllComplaints() {
                       '<td>' + property_id + '</td>' +
                       '<td>' + snum + '</td>' +
                       '<td>' + description + '</td>' +
-                      '<td><img src="../../../HMS_BACKEND/images/' + id + '/' + img + '"></td>' +
+                      '<td id="img"><img src="../../../HMS_BACKEND/images/' + id + '/' + img + '"class="custom-image"></td>' +
                       '<td>' + c_date + '</td>' +
-                      '<td><button type="button" class="delete btn btn-danger" onclick="updateComplain(' + id + ')" >' + status + '</button>  </td>' +
+                      '<td><button type="button" class="delete btn btn-danger" onclick="updateComplain(' + id + ')" > Acccept</button>  </td>' +
                       '</tr>';
 
                   $('#ComplaintsTable tbody').append(newRow);
@@ -190,7 +259,7 @@ function updateComplain(id) {
   let cid = id
   let status = "Approved";
   let date = getCurrentDate();
-  alert(date)
+  
  
 
   $.ajax({
@@ -205,10 +274,17 @@ function updateComplain(id) {
      
     }),
     success: function (data) {
+
+
+
+      Swal.fire('Approved!', 'The complain is Approved .', 'success')
+          .then(() => {
+            window.location.href = "subwarden_complain_Approvedview.html"; // Removed extra ".html"
+          });
      
-           alert("updated");
+           
       
-      window.location.href = "subwarden_complain_Approvedview.html";
+    
     },
     error: function (xhr, exception) {
       alert("Error");

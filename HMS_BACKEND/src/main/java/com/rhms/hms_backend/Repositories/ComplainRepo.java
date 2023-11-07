@@ -30,6 +30,7 @@ public interface ComplainRepo extends CrudRepository<Complain, Long> {
     List<Complain> getComplainByuid(@Param("id") String id);
 
 
+
     @Query(value = "SELECT * FROM  complain WHERE complainant = ?1", nativeQuery = true)
     List<Complain> findComplain(String uid);
 
