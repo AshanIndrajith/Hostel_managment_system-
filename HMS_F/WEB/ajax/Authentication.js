@@ -229,10 +229,10 @@ function redirectToPanel(userRole) {
             window.location.href = '../admin/Warden_Dasboard.html';
             break;
 
-        case 'WARDEN':
+        case 'SUBWARDEN':
             window.location.href = '../admin/subwarden.html';
             break;
-        case 'WARDEN':
+        case 'DEAN':
                 window.location.href = '../admin/Dean_Dashboard.html';
                 break;
         // Add more cases for other roles as needed

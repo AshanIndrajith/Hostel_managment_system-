@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="ajax/jquery-3.6.1.min.js"></script>
 <script src="ajax/complaint.js"></script>
 
@@ -118,11 +118,31 @@
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" id="logoutMenuItem">
                 <i class="ti-power-off text-primary"></i>
                 Logout
-              </a>
-            </div>
+            </a>
+        </div>
+        
+
+
+          <script>
+            // Get the Logout menu item by its ID
+                      const logoutMenuItem = document.getElementById('logoutMenuItem');
+
+                      // Add a click event listener to the Logout menu item
+                      logoutMenuItem.addEventListener('click', function() {
+                           logout(); // Call your logout function when Logout is clicked
+                      });
+
+                      function logout() {
+                          // Clear the user's session or token
+                          localStorage.removeItem('token'); // Assuming you're using localStorage to store the token
+
+                          // Redirect the user to the login page
+                          window.location.href = '../login/index.html'; // Replace 'login.html' with the actual URL of your login page
+                }
+          </script>
           </li>
           
         </ul>
@@ -270,7 +290,7 @@
            <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h4  style="text-align: center;">All complaint</h4><br><br>
+                <h4  style="text-align: center;">Pending complaint</h4><br><br>
                 
                 <div class="table-responsive">
                   <table class="table table-striped" id="ComplaintsTable">

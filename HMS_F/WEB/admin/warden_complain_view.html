@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="ajax/jquery-3.6.1.min.js"></script>
   <script src="ajax/wardenComplainView.js"></script>
 
@@ -25,6 +25,14 @@
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/LOGO_OF_RUHUNA.jpg" />
+
+  <style>
+    .custom-image {
+        width: 500px; /* Adjust the width as needed */
+        height: auto; /* Maintains aspect ratio */
+        border-radius: 0; /* Remove any border-radius */
+    }
+    </style>
 </head>
 <body>
   <div class="container-scroller">
@@ -110,11 +118,31 @@
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" id="logoutMenuItem">
                 <i class="ti-power-off text-primary"></i>
                 Logout
-              </a>
-            </div>
+            </a>
+        </div>
+        
+
+
+          <script>
+            // Get the Logout menu item by its ID
+                      const logoutMenuItem = document.getElementById('logoutMenuItem');
+
+                      // Add a click event listener to the Logout menu item
+                      logoutMenuItem.addEventListener('click', function() {
+                           logout(); // Call your logout function when Logout is clicked
+                      });
+
+                      function logout() {
+                          // Clear the user's session or token
+                          localStorage.removeItem('token'); // Assuming you're using localStorage to store the token
+
+                          // Redirect the user to the login page
+                          window.location.href = '../login/index.html'; // Replace 'login.html' with the actual URL of your login page
+                }
+          </script>
           </li>
           
         </ul>
@@ -139,6 +167,17 @@
           <!-- chat tab ends -->
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -149,10 +188,12 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+
+
+          <!-- <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic"> -->
               <!-- <i class="icon-layout menu-icon"></i> -->
-              <span class="menu-title">Manage Student</span>
+              <!-- <span class="menu-title">Manage Student</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
@@ -163,7 +204,7 @@
             </div>
 
             
-          </li>
+          </li> -->
           
           
           <li class="nav-item">
@@ -175,11 +216,11 @@
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="warden_complain_view.html">View Complain</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Approve Complain</a></li>
+                <li class="nav-item"> <a class="nav-link" href="warden_Approvedview.html">Approve Complain</a></li>
               </ul>
             </div>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <span class="menu-title">Report Generate</span>
               <i class="menu-arrow"></i>
@@ -190,7 +231,7 @@
                 <li class="nav-item"><a class="nav-link" href=""> Monthly  Report</a></li>
               </ul>
             </div>
-          </li>
+          </li> -->
           <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
               <i class="icon-contract menu-icon"></i>
@@ -238,23 +279,39 @@
         </ul>
       </nav>
       <!-- partial -->
+
+
+
+
+
+
+
+
+
+
+      <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4  style="text-align: center;">Complaint</h4><br><br>
+                    <h4  style="text-align: center;">Pending Complaint</h4><br><br>
                     
                     <div class="table-responsive">
                       <table class="table table-striped" id="wardenComplainTable">
                           <thead>
-                              <tr>
-                                  <th>complaint ID</th>
-                                  <th>Room ID</th>
-                                  <th>Category</th>
-                                  <th>Date Submitted</th>
-                                  <th>Action</th>
-                              </tr>
+                            <tr>
+                              <th>ID</th>
+                              <th>Room Number</th>
+                              <th>Property Type</th>
+                              <th>Property Unique ID</th>
+                              <th>complainant</th>
+                              <th>Description</th>
+                              <th>Image Name</th>
+                              <th>Complaint Date</th>
+                              <th>Status</th>
+                             
+                            </tr>
                           </thead>
                           <tbody>
                           </tbody>

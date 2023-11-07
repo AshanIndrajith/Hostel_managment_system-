@@ -2,7 +2,7 @@
 getAllApprovedComplaints()
 
 function getAllApprovedComplaints() {
-    var uid="TG500";
+    var uid="TG-2019-500";
     $.ajax({
         method: "GET",
         url: "http://localhost:8080/api/complaints/getcomplain?uid="+ uid,
