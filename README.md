@@ -78,4 +78,65 @@ User management is the process of overseeing individuals' access to a system. Th
 <img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/RegisterdStudentView.jpg">
 
 
+<h1>Room Insert</h1>
+The "Insert Room" feature involves adding a new room to a system. 
 
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/RoomRegistraion.jpg">
+
+
+<h1>Allocate Room</h1>
+
+Allocating a room refers to the assignment of a specific room to a user or purpose. This essential function ensures a systematic and efficient utilization of available spaces, making it clear who has access to which room for various activities or functions.
+
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/availableCapacity.jpg">
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/allocate room.jpg">
+
+
+<h1>View Room Info</h1>
+
+Viewing room information and assigned members
+
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/room info.jpg">
+
+
+<h1>Deallocate Room</h1>
+
+Deallocating a room involves freeing up a space by removing its assignment. This process makes a room available for new allocations.
+
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/deallocate.jpg">
+
+
+<h1>View Property </h1>
+
+Viewing property details enables users to access information about owned items or assets. That one is used to genarate a QR code using its property ID.
+
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/p.jpg">
+
+
+<h1>Generate QR Code</h1>
+
+Generating a QR code is the creation of a scannable code that encapsulates specific information. providing  details, or facilitating quick access to information through a simple scan.
+
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/QR.jpg">
+
+
+<h1>Scan QR Code</h1>
+
+Scanning a QR code involves using a device, such as a smartphone camera, to read the encoded information within the code. This quick and efficient process allows users to access the embedded data without manual input, enhancing convenience and accessibility.
+
+
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/Scanner.jpg">
+
+
+<h1>Add Complaint</h1>
+
+Adding a complaint is a feature that enables users to insert issues with items within the system.
+
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/com.jpg">
+
+
+<h1>View Complaint</h1>
+
+Viewing complaints allows users to see a compiled list of registered concerns or issues. 
+
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/complain.jpg">
