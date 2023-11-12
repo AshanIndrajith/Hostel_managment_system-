@@ -30,3 +30,31 @@ Ensure compatibility and responsiveness across different devices.
 
 Implement Hibernate for seamless integration with relational databases.
 Simplify database interactions by mapping Java objects to database tables.
+
+
+
+<h1>Project Aim</h1>
+
+The aim of the project is to develop and implement a tailored Hostel Management System for 
+the University of Ruhuna Faculty of Technology. This system will automate the complaints 
+and grievances handling process within the campus hostels, providing students and staff with 
+a user-friendly platform to submit and resolve complaints related to hostel assets. 
+Additionally, the system will facilitate efficient asset oversight and generate reports 
+summarizing complaints for transparent management. Ultimately, the goal is to alleviate the 
+challenges faced by students and staff in the current manual complaint-handling process and 
+establish a more efficient and transparent system for managing hostel assets and addressing 
+student concerns
+
+
+<ul>
+    <li>Users</li>
+    <ul>
+        <li>Admin</li>
+        <li>Dean</li>
+        <li>Warden</li>
+        <li>Sub Warden</li>
+        <li>Student</li>
+    </ul>
+</ul>
+
+
