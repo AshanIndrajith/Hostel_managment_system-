@@ -58,3 +58,24 @@ student concerns
 </ul>
 
 
+
+
+<h1>Login</h1>
+Get into the system by typing your username and password.
+
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/login.jpg">
+
+<h1>Admin panel</h1>
+
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/admin.jpg">
+
+
+<h1>User Management</h1>
+User management is the process of overseeing individuals' access to a system. This involves tasks such as adding new users, updating their information, and defining user roles to control and organize who can use the system. 
+
+
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/UserRegistraion.jpg">
+<img src="https://github.com/AshanIndrajith/Hostel_managment_system-/blob/main/interface/RegisterdStudentView.jpg">
+
+
+
